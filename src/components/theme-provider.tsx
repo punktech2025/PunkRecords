@@ -19,37 +19,37 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
   const [theme, setTheme] = useState<CreativeTheme>('default')
   const [isDark, setIsDark] = useState(true)
 
-  // Service-specific color schemes
+  // Service-specific color schemes based on Punk Records branding
   const serviceColors = {
     music: {
-      primary: '#FF6B6B',      // Vibrant red for music energy
-      secondary: '#4ECDC4',    // Teal for creativity
-      accent: '#45B7D1',       // Blue for rhythm
-      highlight: '#96CEB4'     // Mint for harmony
+      primary: '#FFD700',      // Gold - brand color
+      secondary: '#1A1A1A',    // Dark gray - headphones
+      accent: '#FFC107',       // Amber - musical accents
+      highlight: '#FFE57F'     // Light gold - highlights
     },
     web: {
-      primary: '#7CB342',      // Green for growth/tech
-      secondary: '#4FC3F7',    // Blue for innovation
-      accent: '#AB47BC',       // Purple for creativity
-      highlight: '#FF9800'     // Orange for energy
+      primary: '#FFD700',      // Gold
+      secondary: '#212121',    // Darker gray
+      accent: '#FFA000',       // Dark amber
+      highlight: '#FFECB3'     // Light gold
     },
     photography: {
-      primary: '#9C27B0',      // Purple for artistic vision
-      secondary: '#FF5722',    // Deep orange for passion
-      accent: '#2196F3',       // Blue for clarity
-      highlight: '#4CAF50'     // Green for natural beauty
+      primary: '#FFD700',      // Gold
+      secondary: '#1A1A1A',    // Dark gray
+      accent: '#FFB300',       // Medium amber
+      highlight: '#FFF3E0'     // Very light gold
     },
     video: {
-      primary: '#E91E63',      // Pink for cinematic appeal
-      secondary: '#00BCD4',    // Cyan for motion
-      accent: '#FFC107',       // Amber for lighting
-      highlight: '#8BC34A'     // Light green for storytelling
+      primary: '#FFD700',      // Gold
+      secondary: '#000000',    // Pure black
+      accent: '#FFD740',       // Bright gold
+      highlight: '#FFAB00'     // Dark amber
     },
     default: {
-      primary: '#7CB342',      // Your brand green
-      secondary: '#4FC3F7',    // Your brand blue
-      accent: '#AB47BC',       // Your brand purple
-      highlight: '#FF9800'     // Your brand orange
+      primary: '#FFD700',      // Gold - main brand color
+      secondary: '#1A1A1A',    // Dark gray - from logo
+      accent: '#FFC107',       // Amber - complementary
+      highlight: '#FFE57F'     // Light gold - highlights
     }
   }
 

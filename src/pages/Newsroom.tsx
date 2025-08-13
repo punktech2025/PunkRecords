@@ -15,7 +15,7 @@ const Newsroom = () => {
       date: "2024-01-15",
       author: "Press Team",
       category: "Expansion",
-      image: "/placeholder.svg?height=300&width=400&text=Business+Expansion",
+      image: "/Logo_Punk_Records-removebg-preview_Nero_AI_Image_Upscaler_Photo_Face.png",
     },
     {
       id: 2,
@@ -25,7 +25,7 @@ const Newsroom = () => {
       date: "2024-01-10",
       author: "Studio Team",
       category: "Facility",
-      image: "/placeholder.svg?height=300&width=400&text=Music+Studio",
+      image: "/Logo_Punk_Records-removebg-preview_Nero_AI_Image_Upscaler_Photo_Face.png",
     },
     {
       id: 3,
@@ -35,7 +35,7 @@ const Newsroom = () => {
       date: "2024-01-05",
       author: "Partnership Team",
       category: "Partnership",
-      image: "/placeholder.svg?height=300&width=400&text=Business+Partnership",
+      image: "/Logo_Punk_Records-removebg-preview_Nero_AI_Image_Upscaler_Photo_Face.png",
     },
     {
       id: 4,
@@ -45,7 +45,7 @@ const Newsroom = () => {
       date: "2023-12-20",
       author: "Marketing Team",
       category: "Services",
-      image: "/placeholder.svg?height=300&width=400&text=Social+Media+Marketing",
+      image: "/Logo_Punk_Records-removebg-preview_Nero_AI_Image_Upscaler_Photo_Face.png",
     },
     {
       id: 5,
@@ -55,7 +55,7 @@ const Newsroom = () => {
       date: "2023-12-15",
       author: "Research Team",
       category: "Research",
-      image: "/placeholder.svg?height=300&width=400&text=Marketing+Research",
+      image: "/Logo_Punk_Records-removebg-preview_Nero_AI_Image_Upscaler_Photo_Face.png",
     },
     {
       id: 6,
@@ -65,7 +65,7 @@ const Newsroom = () => {
       date: "2023-12-10",
       author: "Success Team",
       category: "Success Story",
-      image: "/placeholder.svg?height=300&width=400&text=Success+Story",
+      image: "/Logo_Punk_Records-removebg-preview_Nero_AI_Image_Upscaler_Photo_Face.png",
     },
   ]
 
@@ -143,7 +143,7 @@ const Newsroom = () => {
                   viewport={{ once: true }}
                 >
                   <img
-                    src={newsItems[0].image || "/placeholder.svg"}
+                    src={newsItems[0].image || "/Logo_Punk_Records-removebg-preview_Nero_AI_Image_Upscaler_Photo_Face.png"}
                     alt={newsItems[0].title}
                     className="w-full h-64 object-cover rounded-lg mb-6"
                   />
