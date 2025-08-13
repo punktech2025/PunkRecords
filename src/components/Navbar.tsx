@@ -4,6 +4,7 @@ import { useState, useEffect } from "react"
 import { Link, useLocation } from "react-router-dom"
 import { motion, AnimatePresence } from "framer-motion"
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline"
+import Logo from "./Logo"
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false)
@@ -33,29 +34,50 @@ const Navbar = () => {
       animate={{ y: 0 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
       className={`fixed top-0 w-full z-50 transition-all duration-500 ${
-        scrolled ? "glass-dark shadow-2xl shadow-avocado-green/5" : "bg-avocado-dark/95 backdrop-blur-sm"
-      } border-b border-avocado-light-gray`}
+        scrolled ? "bg-gradient-to-r from-gray-400 to-gray-500 shadow-2xl shadow-gray-400/20" : "bg-gradient-to-r from-gray-400/95 to-gray-500/95 backdrop-blur-sm"
+      } border-b border-gray-300/30`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
-          <Link to="/" className="flex items-center space-x-2 group">
-            <motion.div
-              whileHover={{ scale: 1.1, rotate: 360 }}
-              transition={{ duration: 0.6 }}
-              className="w-8 h-8 bg-gradient-to-br from-avocado-green to-green-400 rounded-full flex items-center justify-center shadow-lg group-hover:shadow-avocado-green/50"
-            >
-              <span className="text-white font-bold text-xs">PR</span>
-            </motion.div>
-            <motion.span
-              whileHover={{ scale: 1.05 }}
-              className="text-white font-bold text-xl bg-gradient-to-r from-white to-avocado-green bg-clip-text"
-            >
-              Punk Records
-            </motion.span>
-          </Link>
-
+        <div className="flex flex-col items-center h-16">
+          <div className="flex w-full justify-between items-center">
+            <Logo variant="medium" className="hover:opacity-90 transition-opacity" />
+            
+            {/* Mobile menu button with enhanced animation */}
+            <div className="lg:hidden">
+              <motion.button
+                whileTap={{ scale: 0.95 }}
+                onClick={() => setIsOpen(!isOpen)}
+                className="text-gray-800 hover:text-[#B8860B] p-2 rounded-lg hover:bg-[#B8860B]/10 transition-all duration-200"
+              >
+                <AnimatePresence mode="wait">
+                  {isOpen ? (
+                    <motion.div
+                      key="close"
+                      initial={{ rotate: -90, opacity: 0 }}
+                      animate={{ rotate: 0, opacity: 1 }}
+                      exit={{ rotate: 90, opacity: 0 }}
+                      transition={{ duration: 0.2 }}
+                    >
+                      <XMarkIcon className="h-6 w-6" />
+                    </motion.div>
+                  ) : (
+                    <motion.div
+                      key="menu"
+                      initial={{ rotate: 90, opacity: 0 }}
+                      animate={{ rotate: 0, opacity: 1 }}
+                      exit={{ rotate: -90, opacity: 0 }}
+                      transition={{ duration: 0.2 }}
+                    >
+                      <Bars3Icon className="h-6 w-6" />
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </motion.button>
+            </div>
+          </div>
+          
           {/* Desktop Navigation with enhanced animations */}
-          <div className="hidden lg:flex items-center space-x-8">
+          <div className="hidden lg:flex items-center justify-center space-x-8 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
             {navItems.map((item, index) => (
               <motion.div
                 key={item.name}
@@ -67,49 +89,18 @@ const Navbar = () => {
                   to={item.path}
                   className={`text-sm font-medium transition-all duration-300 relative group ${
                     location.pathname === item.path
-                      ? "text-avocado-green"
-                      : "text-avocado-text hover:text-avocado-green"
+                      ? "text-[#B8860B]"
+                      : "text-gray-800 hover:text-[#B8860B]"
                   }`}
                 >
                   {item.name}
-                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-avocado-green to-green-400 group-hover:w-full transition-all duration-300"></span>
+                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-[#FFD700] to-[#FFA000] group-hover:w-full transition-all duration-300"></span>
                 </Link>
               </motion.div>
             ))}
           </div>
 
-          {/* Mobile menu button with enhanced animation */}
-          <div className="lg:hidden">
-            <motion.button
-              whileTap={{ scale: 0.95 }}
-              onClick={() => setIsOpen(!isOpen)}
-              className="text-avocado-text hover:text-avocado-green p-2 rounded-lg hover:bg-avocado-gray/50 transition-all duration-200"
-            >
-              <AnimatePresence mode="wait">
-                {isOpen ? (
-                  <motion.div
-                    key="close"
-                    initial={{ rotate: -90, opacity: 0 }}
-                    animate={{ rotate: 0, opacity: 1 }}
-                    exit={{ rotate: 90, opacity: 0 }}
-                    transition={{ duration: 0.2 }}
-                  >
-                    <XMarkIcon className="h-6 w-6" />
-                  </motion.div>
-                ) : (
-                  <motion.div
-                    key="menu"
-                    initial={{ rotate: 90, opacity: 0 }}
-                    animate={{ rotate: 0, opacity: 1 }}
-                    exit={{ rotate: -90, opacity: 0 }}
-                    transition={{ duration: 0.2 }}
-                  >
-                    <Bars3Icon className="h-6 w-6" />
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            </motion.button>
-          </div>
+
         </div>
 
         {/* Mobile Navigation with enhanced animations */}
@@ -134,8 +125,8 @@ const Navbar = () => {
                       to={item.path}
                       className={`block text-sm font-medium transition-all duration-200 py-2 px-4 rounded-lg ${
                         location.pathname === item.path
-                          ? "text-avocado-green bg-avocado-green/10"
-                          : "text-avocado-text hover:text-avocado-green hover:bg-avocado-gray/50"
+                          ? "text-[#B8860B] bg-[#B8860B]/10"
+                          : "text-gray-800 hover:text-[#B8860B] hover:bg-[#B8860B]/5"
                       }`}
                       onClick={() => setIsOpen(false)}
                     >
