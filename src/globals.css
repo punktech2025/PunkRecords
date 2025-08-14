@@ -237,6 +237,55 @@
       transform: translateY(0);
     }
   }
+
+  /* Matrix-style background animations */
+  .matrix-symbol {
+    font-family: 'Courier New', monospace;
+    font-weight: bold;
+    letter-spacing: 0.1em;
+  }
+
+  .matrix-glow {
+    filter: drop-shadow(0 0 3px currentColor) drop-shadow(0 0 8px currentColor);
+  }
+
+  /* Performance optimizations for Matrix animation */
+  .matrix-container {
+    will-change: transform, opacity;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    contain: layout style paint;
+  }
+
+  /* Matrix trail effects */
+  .matrix-trail {
+    will-change: transform, opacity;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    contain: layout style paint;
+  }
+
+  /* Smooth animation keyframes for continuous flow */
+  @keyframes matrix-fall {
+    0% {
+      transform: translateY(-100vh) translateZ(0);
+      opacity: 0;
+    }
+    5% {
+      opacity: 0.7;
+    }
+    95% {
+      opacity: 0.7;
+    }
+    100% {
+      transform: translateY(100vh) translateZ(0);
+      opacity: 0;
+    }
+  }
+
+  .matrix-continuous {
+    animation: matrix-fall linear infinite;
+  }
 }
 
 @layer base {
