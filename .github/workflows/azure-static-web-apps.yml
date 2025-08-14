@@ -51,21 +51,31 @@ jobs:
           echo "Current working directory:"
           pwd
 
+      - name: Debug - Check secrets availability
+        run: |
+          echo "Checking if Azure token secret exists..."
+          if [ -z "${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_BLUE_HILL_07F6F5700 }}" ]; then
+            echo "❌ AZURE_STATIC_WEB_APPS_API_TOKEN_BLUE_HILL_07F6F5700 is empty or not set"
+            echo "Available secrets (names only):"
+            echo "- GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN != '' }}"
+          else
+            echo "✅ AZURE_STATIC_WEB_APPS_API_TOKEN_BLUE_HILL_07F6F5700 is available"
+            echo "Token length: ${#AZURE_TOKEN}"
+          fi
+        env:
+          AZURE_TOKEN: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_BLUE_HILL_07F6F5700 }}
+
       - name: Deploy to Azure Static Web Apps
         id: builddeploy
         uses: Azure/static-web-apps-deploy@v1
-        env:
-          AZURE_STATIC_WEB_APPS_API_TOKEN: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN }}
         with:
-          azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN }}
+          azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_BLUE_HILL_07F6F5700 }}
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           action: "upload"
           app_location: "/"
           api_location: ""
           output_location: "dist"
           skip_app_build: true
-          skip_deploy_on_missing_secrets: false
-          deployment_environment: 'Production'
 
   close_pull_request_job:
     if: github.event_name == 'pull_request' && github.event.action == 'closed'
@@ -76,5 +86,5 @@ jobs:
         id: closepullrequest
         uses: Azure/static-web-apps-deploy@v1
         with:
-          azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN }}
+          azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_BLUE_HILL_07F6F5700 }}
           action: "close"
