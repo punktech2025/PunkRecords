@@ -1,0 +1,51 @@
+name: Auto Merge Dev to Prd (Only if Changes)
+
+on:
+  push:
+    branches:
+      - dev
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  merge:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Dev Branch
+        uses: actions/checkout@v4
+        with:
+          ref: dev
+          fetch-depth: 0
+
+      - name: Configure Git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Fetch Prd Branch
+        run: git fetch origin prd:prd
+
+      - name: Check if Merge is Needed
+        id: check
+        run: |
+          if git diff --quiet dev prd; then
+            echo "✅ Already up-to-date, skipping deploy."
+            echo "merge_needed=false" >> $GITHUB_ENV
+          else
+            echo "🔄 Changes found. Merging..."
+            echo "merge_needed=true" >> $GITHUB_ENV
+          fi
+
+      - name: Merge Dev into Prd
+        if: env.merge_needed == 'true'
+        run: |
+          git checkout prd
+          set -e
+          if ! git merge dev --no-edit; then
+            echo "❌ Merge conflict detected between dev and prd."
+            echo "Please resolve the conflict manually."
+            exit 1
+          fi
+          git push origin prd
