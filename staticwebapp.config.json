@@ -11,6 +11,9 @@
     ".mjs": "application/javascript"
   },
   "globalHeaders": {
-    "Cache-Control": "no-cache"
+    "Cache-Control": "no-cache",
+    "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS",
+    "Access-Control-Allow-Headers": "Content-Type, x-functions-key",
+    "Access-Control-Allow-Origin": "*"
   }
 }
