@@ -67,20 +67,51 @@ const httpTrigger: AzureFunction = async function (context: Context, req: HttpRe
         }
 
         // Send email using Resend
-        await resend.emails.send({
-            from: "Punk Records <contact@punktech.in>",
-            to: ["Vansh.Rajak@punktech.in"],
-            subject: `New Contact Form Submission from ${name}`,
-            html: `
-                <h2>New Contact Form Submission</h2>
-                <p><strong>Name:</strong> ${name}</p>
-                <p><strong>Email:</strong> ${email}</p>
-                <p><strong>Message:</strong></p>
-                <p>${message}</p>
-            `,
-            // Add reply-to so you can reply directly to the sender
-            reply_to: email
-        });
+        if (!process.env.RESEND_API_KEY) {
+            throw new Error("RESEND_API_KEY environment variable is not configured");
+        }
+
+        try {
+            // Log the attempt
+            context.log.info("Attempting to send email with Resend", {
+                from: "Punk Records <contact@punktech.in>",
+                to: ["Vansh.Rajak@punktech.in"],
+                subject: `New Contact Form Submission from ${name}`
+            });
+
+            const emailResult = await resend.emails.send({
+                from: "Punk Records <contact@punktech.in>",
+                to: ["Vansh.Rajak@punktech.in"],
+                subject: `New Contact Form Submission from ${name}`,
+                html: `
+                    <h2>New Contact Form Submission</h2>
+                    <p><strong>Name:</strong> ${name}</p>
+                    <p><strong>Email:</strong> ${email}</p>
+                    <p><strong>Message:</strong></p>
+                    <p>${message}</p>
+                `,
+                // Add reply-to so you can reply directly to the sender
+                reply_to: email,
+                tags: [{ name: 'category', value: 'contact_form' }]
+            });
+            
+            // Log the success with the email ID
+            context.log.info("Email sent successfully with ID:", emailResult.id);
+            
+            // Verify the email was accepted
+            if (!emailResult.id) {
+                throw new Error("No email ID returned from Resend");
+            }
+        } catch (emailError) {
+            // Log detailed error information
+            context.log.error("Failed to send email:", {
+                error: emailError.message,
+                code: emailError.statusCode,
+                name: emailError.name,
+                stack: emailError.stack
+            });
+            throw emailError;
+        }
 
         context.res = {
             status: 200,
@@ -88,10 +119,18 @@ const httpTrigger: AzureFunction = async function (context: Context, req: HttpRe
         };
     } catch (error) {
         context.log.error("Error processing contact form:", error);
-        context.res = {
-            status: 500,
-            body: { error: "Failed to send message. Please try again later." }
-        };
+        // Check if it's a known error type
+        if (error.message === "RESEND_API_KEY environment variable is not configured") {
+            context.res = {
+                status: 500,
+                body: { error: "Email service configuration error. Please contact support." }
+            };
+        } else {
+            context.res = {
+                status: 500,
+                body: { error: "Failed to send message. Please try again later." }
+            };
+        }
     }
 };
 
