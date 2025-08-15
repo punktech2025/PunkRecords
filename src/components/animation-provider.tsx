@@ -56,5 +56,11 @@ export const Motion = {
   h5: m.h5,
   h6: m.h6,
   ul: m.ul,
-  li: m.li
+  li: m.li,
+  img: m.img,
+  svg: m.svg,
+  form: m.form,
+  input: m.input,
+  textarea: m.textarea,
+  label: m.label
 }

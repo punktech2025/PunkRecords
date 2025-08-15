@@ -1,4 +1,4 @@
-import { motion } from "framer-motion"
+import { Motion } from "../components/animation-provider"
 import MatrixBackground from "../components/MatrixBackground"
 
 interface TeamMember {
@@ -61,22 +61,22 @@ const Team = () => {
         {/* Hero Section */}
         <section className="min-h-screen flex items-center justify-center px-4">
           <div className="max-w-6xl mx-auto text-center">
-            <motion.h1 
+            <Motion.h1 
               className="text-6xl md:text-8xl font-bold mb-6 gradient-text"
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
             >
               Our Team
-            </motion.h1>
-            <motion.p 
+            </Motion.h1>
+            <Motion.p 
               className="text-xl md:text-2xl mb-8 text-gray-300 max-w-3xl mx-auto"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
               Meet the creative minds behind Punk Records - a diverse team of talented professionals dedicated to bringing your vision to life.
-            </motion.p>
+            </Motion.p>
           </div>
         </section>
 
@@ -85,7 +85,7 @@ const Team = () => {
           <div className="max-w-7xl mx-auto">
             <div className="grid lg:grid-cols-2 gap-12">
               {teamMembers.map((member, index) => (
-                <motion.div
+                <Motion.div
                   key={member.name}
                   className="feature-card bg-gray-900/30 backdrop-blur-sm p-8 rounded-xl border border-avocado-green/20"
                   initial={{ opacity: 0, y: 50 }}
@@ -150,7 +150,7 @@ const Team = () => {
                       )}
                     </div>
                   </div>
-                </motion.div>
+                </Motion.div>
               ))}
             </div>
           </div>
@@ -159,7 +159,7 @@ const Team = () => {
         {/* Company Culture Section */}
         <section className="py-20 px-4 bg-gray-900/20">
           <div className="max-w-6xl mx-auto">
-            <motion.div
+            <Motion.div
               className="text-center mb-16"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
@@ -169,10 +169,10 @@ const Team = () => {
               <p className="text-xl text-gray-300 max-w-3xl mx-auto">
                 Our diverse team brings together expertise from multiple creative disciplines to deliver comprehensive solutions for your business.
               </p>
-            </motion.div>
+            </Motion.div>
 
             <div className="grid md:grid-cols-3 gap-8">
-              <motion.div
+              <Motion.div
                 className="feature-card bg-gray-900/30 backdrop-blur-sm p-8 rounded-xl text-center"
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -183,9 +183,9 @@ const Team = () => {
                 <p className="text-gray-300">
                   We stay ahead of industry trends and use cutting-edge technology to deliver exceptional results.
                 </p>
-              </motion.div>
+              </Motion.div>
 
-              <motion.div
+              <Motion.div
                 className="feature-card bg-gray-900/30 backdrop-blur-sm p-8 rounded-xl text-center"
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -196,9 +196,9 @@ const Team = () => {
                 <p className="text-gray-300">
                   We work closely with our clients to understand their vision and bring it to life through collaboration.
                 </p>
-              </motion.div>
+              </Motion.div>
 
-              <motion.div
+              <Motion.div
                 className="feature-card bg-gray-900/30 backdrop-blur-sm p-8 rounded-xl text-center"
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -209,7 +209,7 @@ const Team = () => {
                 <p className="text-gray-300">
                   Our streamlined processes and experienced team ensure quick turnaround without compromising quality.
                 </p>
-              </motion.div>
+              </Motion.div>
             </div>
           </div>
         </section>

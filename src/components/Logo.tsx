@@ -1,6 +1,6 @@
 import React from 'react'
-import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
+import { Motion } from './animation-provider'
 
 interface LogoProps {
   variant?: 'default' | 'small' | 'medium' | 'large'
@@ -28,7 +28,7 @@ const Logo: React.FC<LogoProps> = ({ variant = 'default', className = '' }) => {
 
   return (
     <Link to="/" className={`inline-block ${className}`}>
-      <motion.div
+      <Motion.div
         variants={logoVariants}
         initial="initial"
         animate="animate"
@@ -39,10 +39,10 @@ const Logo: React.FC<LogoProps> = ({ variant = 'default', className = '' }) => {
         }}
         className={`relative ${sizes[variant]} group`}
       >
-        <motion.div
+        <Motion.div
           className={`${sizes[variant]} relative flex items-center justify-center`}
         >
-          <motion.img
+          <Motion.img
             src="/Logo_Punk_Records-removebg-preview_Nero_AI_Image_Upscaler_Photo_Face.png"
             alt="Punk Records"
             className={`${sizes[variant]} object-contain relative z-10`}
@@ -51,11 +51,11 @@ const Logo: React.FC<LogoProps> = ({ variant = 'default', className = '' }) => {
             transition={{ duration: 0.2 }}
             loading="eager"
           />
-        </motion.div>
+        </Motion.div>
         
         {/* Optimized glow effect with reduced blur */}
         <div className="absolute inset-0 bg-gradient-to-r from-[#FFD700]/20 via-[#FFA000]/15 to-transparent rounded-full blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
-      </motion.div>
+      </Motion.div>
     </Link>
   )
 }

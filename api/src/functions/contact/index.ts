@@ -16,6 +16,19 @@ const MAX_REQUESTS = 5; // Maximum requests per IP per hour
 const rateLimitStore = new Map<string, { count: number; timestamp: number }>();
 
 const httpTrigger: AzureFunction = async function (context: Context, req: HttpRequest): Promise<void> {
+    // Handle CORS preflight requests
+    if (req.method === "OPTIONS") {
+        context.res = {
+            status: 200,
+            headers: {
+                "Access-Control-Allow-Origin": "*",
+                "Access-Control-Allow-Methods": "GET, POST, OPTIONS",
+                "Access-Control-Allow-Headers": "Content-Type, x-functions-key"
+            }
+        };
+        return;
+    }
+
     try {
         // Get client IP
         const clientIP = req.headers["x-forwarded-for"] || req.headers["x-real-ip"] || "unknown";
@@ -95,6 +108,13 @@ Time: ${timestamp}
 IP: ${clientIP}
 User Agent: ${userAgent}`;
 
+            // Log the attempt
+            context.log.info("Attempting to send email with Resend", {
+                from: "Punk Records <contact@punktech.in>",
+                to: ["Vansh.Rajak@punktech.in"],
+                subject: `New Contact Form Submission`
+            });
+
             const emailResult = await resend.emails.send({
                 from: "Punk Records <contact@punktech.in>",
                 to: ["Vansh.Rajak@punktech.in"],
@@ -126,6 +146,11 @@ User Agent: ${userAgent}`;
 
         context.res = {
             status: 200,
+            headers: {
+                "Access-Control-Allow-Origin": "*",
+                "Access-Control-Allow-Methods": "GET, POST, OPTIONS",
+                "Access-Control-Allow-Headers": "Content-Type, x-functions-key"
+            },
             body: { message: "Message sent successfully" }
         };
     } catch (err) {
@@ -135,11 +160,21 @@ User Agent: ${userAgent}`;
         if (error.message === "RESEND_API_KEY environment variable is not configured") {
             context.res = {
                 status: 500,
+                headers: {
+                    "Access-Control-Allow-Origin": "*",
+                    "Access-Control-Allow-Methods": "GET, POST, OPTIONS",
+                    "Access-Control-Allow-Headers": "Content-Type, x-functions-key"
+                },
                 body: { error: "Email service configuration error. Please contact support." }
             };
         } else {
             context.res = {
                 status: 500,
+                headers: {
+                    "Access-Control-Allow-Origin": "*",
+                    "Access-Control-Allow-Methods": "GET, POST, OPTIONS",
+                    "Access-Control-Allow-Headers": "Content-Type, x-functions-key"
+                },
                 body: { error: "Failed to send message. Please try again later." }
             };
         }

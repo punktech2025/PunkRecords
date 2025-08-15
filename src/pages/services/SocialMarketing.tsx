@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion'
+import { Motion } from '../../components/animation-provider'
 import { Helmet } from 'react-helmet-async'
 import { 
   MegaphoneIcon, 
@@ -66,7 +66,7 @@ const SocialMarketing = () => {
         {/* Hero Section */}
         <section className="relative z-10 py-20 px-4">
           <div className="max-w-7xl mx-auto text-center">
-            <motion.div
+            <Motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
@@ -81,9 +81,9 @@ const SocialMarketing = () => {
               <p className="text-xl md:text-2xl text-blue-100 max-w-4xl mx-auto leading-relaxed">
                 Strategic digital marketing solutions that drive engagement, growth, and measurable results
               </p>
-            </motion.div>
+            </Motion.div>
 
-            <motion.div
+            <Motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
@@ -97,14 +97,14 @@ const SocialMarketing = () => {
                   {platform}
                 </span>
               ))}
-            </motion.div>
+            </Motion.div>
           </div>
         </section>
 
         {/* Service Categories */}
         <section className="relative z-10 py-20 px-4">
           <div className="max-w-7xl mx-auto">
-            <motion.div
+            <Motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
@@ -116,11 +116,11 @@ const SocialMarketing = () => {
               <p className="text-xl text-blue-100 max-w-3xl mx-auto">
                 Three specialized divisions working together to create comprehensive marketing solutions
               </p>
-            </motion.div>
+            </Motion.div>
 
             <div className="grid md:grid-cols-3 gap-8">
               {services.map((service, index) => (
-                <motion.div
+                <Motion.div
                   key={service.name}
                   initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -141,7 +141,7 @@ const SocialMarketing = () => {
                       </li>
                     ))}
                   </ul>
-                </motion.div>
+                </Motion.div>
               ))}
             </div>
           </div>
@@ -150,7 +150,7 @@ const SocialMarketing = () => {
         {/* Features Section */}
         <section className="relative z-10 py-20 px-4 bg-blue-800/10">
           <div className="max-w-7xl mx-auto">
-            <motion.div
+            <Motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
@@ -162,11 +162,11 @@ const SocialMarketing = () => {
               <p className="text-xl text-blue-100 max-w-3xl mx-auto">
                 We combine strategic thinking with data-driven insights to deliver marketing that works
               </p>
-            </motion.div>
+            </Motion.div>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {features.map((feature, index) => (
-                <motion.div
+                <Motion.div
                   key={feature.title}
                   initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -182,7 +182,7 @@ const SocialMarketing = () => {
                   <p className="text-blue-100 leading-relaxed">
                     {feature.description}
                   </p>
-                </motion.div>
+                </Motion.div>
               ))}
             </div>
           </div>
@@ -191,7 +191,7 @@ const SocialMarketing = () => {
         {/* Results Section */}
         <section className="relative z-10 py-20 px-4">
           <div className="max-w-7xl mx-auto">
-            <motion.div
+            <Motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
@@ -203,7 +203,7 @@ const SocialMarketing = () => {
               <p className="text-xl text-blue-100 max-w-3xl mx-auto">
                 We track and optimize every campaign to ensure maximum ROI and growth
               </p>
-            </motion.div>
+            </Motion.div>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
               {[
@@ -212,7 +212,7 @@ const SocialMarketing = () => {
                 { metric: "85%", desc: "Customer satisfaction rate" },
                 { metric: "3x", desc: "ROI improvement average" }
               ].map((result, index) => (
-                <motion.div
+                <Motion.div
                   key={result.metric}
                   initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -225,7 +225,7 @@ const SocialMarketing = () => {
                   <p className="text-blue-200 text-sm">
                     {result.desc}
                   </p>
-                </motion.div>
+                </Motion.div>
               ))}
             </div>
           </div>
@@ -234,7 +234,7 @@ const SocialMarketing = () => {
         {/* CTA Section */}
         <section className="relative z-10 py-20 px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <motion.div
+            <Motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
@@ -255,7 +255,7 @@ const SocialMarketing = () => {
                   <span>Get Free Consultation</span>
                 </button>
               </div>
-            </motion.div>
+            </Motion.div>
           </div>
         </section>
       </div>

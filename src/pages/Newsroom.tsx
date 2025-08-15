@@ -1,6 +1,6 @@
 "use client"
 
-import { motion } from "framer-motion"
+import { Motion } from "../components/animation-provider"
 import { Helmet } from "react-helmet-async"
 import { Link } from "react-router-dom"
 import { NewspaperIcon, CalendarIcon, UserIcon, ArrowRightIcon } from "@heroicons/react/24/outline"
@@ -89,7 +89,7 @@ const Newsroom = () => {
         {/* Hero Section */}
         <section className="hero-bg py-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <motion.div
+            <Motion.div
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
@@ -102,7 +102,7 @@ const Newsroom = () => {
                 Stay updated with the latest news, service announcements, and creative insights from Punk Records. Get
                 the latest information about our creative innovations and company milestones.
               </p>
-            </motion.div>
+            </Motion.div>
           </div>
         </section>
 
@@ -125,7 +125,7 @@ const Newsroom = () => {
         {/* Featured News */}
         <section className="py-20 bg-avocado-dark">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <motion.div
+            <Motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
@@ -136,7 +136,7 @@ const Newsroom = () => {
 
               {/* Featured Article */}
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
-                <motion.div
+                <Motion.div
                   initial={{ opacity: 0, x: -50 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.8 }}
@@ -147,9 +147,9 @@ const Newsroom = () => {
                     alt={newsItems[0].title}
                     className="w-full h-64 object-cover rounded-lg mb-6"
                   />
-                </motion.div>
+                </Motion.div>
 
-                <motion.div
+                <Motion.div
                   initial={{ opacity: 0, x: 50 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.8 }}
@@ -180,14 +180,14 @@ const Newsroom = () => {
                       <ArrowRightIcon className="w-4 h-4 ml-2" />
                     </Link>
                   </div>
-                </motion.div>
+                </Motion.div>
               </div>
-            </motion.div>
+            </Motion.div>
 
             {/* News Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {newsItems.slice(1).map((item, index) => (
-                <motion.article
+                <Motion.article
                   key={item.id}
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -234,7 +234,7 @@ const Newsroom = () => {
                       </Link>
                     </div>
                   </div>
-                </motion.article>
+                </Motion.article>
               ))}
             </div>
           </div>
@@ -243,7 +243,7 @@ const Newsroom = () => {
         {/* Company Resources */}
         <section className="bg-avocado-gray py-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <motion.div
+            <Motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
@@ -289,14 +289,14 @@ const Newsroom = () => {
                   </Link>
                 </div>
               </div>
-            </motion.div>
+            </Motion.div>
           </div>
         </section>
 
         {/* Newsletter Signup */}
         <section className="bg-gradient-to-br from-avocado-green/10 to-avocado-dark py-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <motion.div
+            <Motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
@@ -315,7 +315,7 @@ const Newsroom = () => {
                 />
                 <button className="btn-primary whitespace-nowrap">Subscribe</button>
               </div>
-            </motion.div>
+            </Motion.div>
           </div>
         </section>
       </div>

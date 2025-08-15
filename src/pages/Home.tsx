@@ -1,6 +1,6 @@
 "use client"
 
-import { motion } from "framer-motion"
+import { Motion } from "../components/animation-provider"
 import { Helmet } from "react-helmet-async"
 import { Link } from "react-router-dom"
 import { useTheme } from "../components/theme-provider"
@@ -117,88 +117,88 @@ const Home = () => {
 
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-              <motion.div
+              <Motion.div
                 initial={{ opacity: 0, x: -50 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8 }}
               >
-                <motion.h1
+                <Motion.h1
                   className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6"
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ duration: 1, delay: 0.2 }}
                 >
-                  <motion.span
+                  <Motion.span
                     initial={{ y: 100, opacity: 0 }}
                     animate={{ y: 0, opacity: 1 }}
                     transition={{ duration: 0.8, delay: 0.3 }}
                     className="block"
                   >
                     {currentContent.title.split(' ').slice(0, 2).join(' ')}
-                  </motion.span>
-                  <motion.span
+                  </Motion.span>
+                  <Motion.span
                     initial={{ y: 100, opacity: 0 }}
                     animate={{ y: 0, opacity: 1 }}
                     transition={{ duration: 0.8, delay: 0.5 }}
                     className="gradient-text block"
                   >
                     {currentContent.title.split(' ').slice(2, 4).join(' ')}
-                  </motion.span>
-                  <motion.span
+                  </Motion.span>
+                  <Motion.span
                     initial={{ y: 100, opacity: 0 }}
                     animate={{ y: 0, opacity: 1 }}
                     transition={{ duration: 0.8, delay: 0.7 }}
                     className="block"
                   >
                     {currentContent.title.split(' ').slice(4).join(' ')}
-                  </motion.span>
-                </motion.h1>
+                  </Motion.span>
+                </Motion.h1>
 
-                <motion.h2
+                <Motion.h2
                   className="text-2xl md:text-3xl font-semibold text-avocado-green mb-4"
                   initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 1.0 }}
                 >
                   {currentContent.subtitle}
-                </motion.h2>
+                </Motion.h2>
 
-                <motion.p
+                <Motion.p
                   className="text-avocado-text text-lg md:text-xl mb-8 leading-relaxed"
                   initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 1.1 }}
                 >
                   {currentContent.description}
-                </motion.p>
+                </Motion.p>
 
-                <motion.div
+                <Motion.div
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 1.3 }}
                 >
                   <Link to="/reveal" className="btn-primary inline-flex items-center space-x-2 group">
                     <span>EXPLORE SERVICES</span>
-                    <motion.svg
+                    <Motion.svg
                       className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-200"
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
                     >
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                    </motion.svg>
+                    </Motion.svg>
                   </Link>
-                </motion.div>
-              </motion.div>
+                </Motion.div>
+              </Motion.div>
 
-              <motion.div
+              <Motion.div
                 initial={{ opacity: 0, x: 50 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
                 className="relative"
               >
-                <motion.div className="relative z-10" whileHover={{ scale: 1.02 }} transition={{ duration: 0.3 }}>
-                  <motion.img
+                <Motion.div className="relative z-10" whileHover={{ scale: 1.02 }} transition={{ duration: 0.3 }}>
+                  <Motion.img
                     src={currentContent.heroImage}
                     alt={`Punk Records Creative Studio - ${currentContent.title}`}
                     className="w-full h-auto rounded-lg shadow-2xl hover-glow"
@@ -206,10 +206,10 @@ const Home = () => {
                     animate={{ scale: 1, opacity: 1 }}
                     transition={{ duration: 1, delay: 0.5 }}
                   />
-                </motion.div>
+                </Motion.div>
 
                 {/* ... existing gradient animations ... */}
-                <motion.div
+                <Motion.div
                   className="absolute -top-4 -right-4 w-72 h-72 bg-gradient-to-br from-avocado-green/30 to-green-400/20 rounded-full blur-3xl"
                   animate={{
                     scale: [1, 1.2, 1],
@@ -221,7 +221,7 @@ const Home = () => {
                     ease: "easeInOut",
                   }}
                 />
-                <motion.div
+                <Motion.div
                   className="absolute -bottom-4 -left-4 w-72 h-72 bg-gradient-to-br from-avocado-blue/30 to-blue-400/20 rounded-full blur-3xl"
                   animate={{
                     scale: [1.2, 1, 1.2],
@@ -234,7 +234,7 @@ const Home = () => {
                     delay: 2,
                   }}
                 />
-              </motion.div>
+              </Motion.div>
             </div>
           </div>
         </section>
@@ -242,7 +242,7 @@ const Home = () => {
         {/* Client Testimonial Section */}
         <section className="bg-avocado-gray py-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <motion.div
+            <Motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
@@ -267,14 +267,14 @@ const Home = () => {
                   </p>
                 </div>
               </div>
-            </motion.div>
+            </Motion.div>
           </div>
         </section>
 
         {/* Video Production Section */}
         <section className="bg-gradient-to-br from-avocado-green/10 to-avocado-dark py-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <motion.div
+            <Motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
@@ -305,7 +305,7 @@ const Home = () => {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                 </svg>
               </Link>
-            </motion.div>
+            </Motion.div>
           </div>
         </section>
 
@@ -330,7 +330,7 @@ const Home = () => {
         {/* Pricing Section */}
         <section className="bg-avocado-gray py-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <motion.div
+            <Motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
@@ -375,14 +375,14 @@ const Home = () => {
                   </ul>
                 </div>
               </div>
-            </motion.div>
+            </Motion.div>
           </div>
         </section>
 
         {/* Marketing Strategy Section */}
         <section className="bg-gradient-to-br from-avocado-green/10 to-avocado-dark py-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <motion.div
+            <Motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
@@ -399,7 +399,7 @@ const Home = () => {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                 </svg>
               </Link>
-            </motion.div>
+            </Motion.div>
           </div>
         </section>
       </div>

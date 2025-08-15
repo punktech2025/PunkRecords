@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion'
+import { Motion } from '../../components/animation-provider'
 import { Helmet } from 'react-helmet-async'
 import { 
   PaintBrushIcon, 
@@ -66,7 +66,7 @@ const GraphicsEditing = () => {
         {/* Hero Section */}
         <section className="relative z-10 py-20 px-4">
           <div className="max-w-7xl mx-auto text-center">
-            <motion.div
+            <Motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
@@ -81,9 +81,9 @@ const GraphicsEditing = () => {
               <p className="text-xl md:text-2xl text-purple-100 max-w-4xl mx-auto leading-relaxed">
                 Transforming ideas into stunning visual creations with cutting-edge design and editing tools
               </p>
-            </motion.div>
+            </Motion.div>
 
-            <motion.div
+            <Motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
@@ -97,14 +97,14 @@ const GraphicsEditing = () => {
                   {tool}
                 </span>
               ))}
-            </motion.div>
+            </Motion.div>
           </div>
         </section>
 
         {/* Service Categories */}
         <section className="relative z-10 py-20 px-4">
           <div className="max-w-7xl mx-auto">
-            <motion.div
+            <Motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
@@ -116,11 +116,11 @@ const GraphicsEditing = () => {
               <p className="text-xl text-purple-100 max-w-3xl mx-auto">
                 Three specialized divisions working together to bring your creative vision to life
               </p>
-            </motion.div>
+            </Motion.div>
 
             <div className="grid md:grid-cols-3 gap-8">
               {services.map((service, index) => (
-                <motion.div
+                <Motion.div
                   key={service.name}
                   initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -141,7 +141,7 @@ const GraphicsEditing = () => {
                       </li>
                     ))}
                   </ul>
-                </motion.div>
+                </Motion.div>
               ))}
             </div>
           </div>
@@ -150,7 +150,7 @@ const GraphicsEditing = () => {
         {/* Features Section */}
         <section className="relative z-10 py-20 px-4 bg-purple-800/10">
           <div className="max-w-7xl mx-auto">
-            <motion.div
+            <Motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
@@ -162,11 +162,11 @@ const GraphicsEditing = () => {
               <p className="text-xl text-purple-100 max-w-3xl mx-auto">
                 We combine artistic talent with technical expertise to create visuals that inspire and engage
               </p>
-            </motion.div>
+            </Motion.div>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {features.map((feature, index) => (
-                <motion.div
+                <Motion.div
                   key={feature.title}
                   initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -182,7 +182,7 @@ const GraphicsEditing = () => {
                   <p className="text-purple-100 leading-relaxed">
                     {feature.description}
                   </p>
-                </motion.div>
+                </Motion.div>
               ))}
             </div>
           </div>
@@ -191,7 +191,7 @@ const GraphicsEditing = () => {
         {/* Portfolio Section */}
         <section className="relative z-10 py-20 px-4">
           <div className="max-w-7xl mx-auto">
-            <motion.div
+            <Motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
@@ -203,7 +203,7 @@ const GraphicsEditing = () => {
               <p className="text-xl text-purple-100 max-w-3xl mx-auto">
                 Showcasing our diverse range of creative work across different mediums and styles
               </p>
-            </motion.div>
+            </Motion.div>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
               {[
@@ -212,7 +212,7 @@ const GraphicsEditing = () => {
                 { name: "Photo Editing", desc: "Retouching & enhancement" },
                 { name: "Motion Graphics", desc: "Animated content" }
               ].map((portfolio, index) => (
-                <motion.div
+                <Motion.div
                   key={portfolio.name}
                   initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -226,7 +226,7 @@ const GraphicsEditing = () => {
                   <p className="text-purple-200 text-sm">
                     {portfolio.desc}
                   </p>
-                </motion.div>
+                </Motion.div>
               ))}
             </div>
           </div>
@@ -235,7 +235,7 @@ const GraphicsEditing = () => {
         {/* CTA Section */}
         <section className="relative z-10 py-20 px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <motion.div
+            <Motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
@@ -256,7 +256,7 @@ const GraphicsEditing = () => {
                   <span>View Portfolio</span>
                 </button>
               </div>
-            </motion.div>
+            </Motion.div>
           </div>
         </section>
       </div>

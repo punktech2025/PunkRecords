@@ -1,6 +1,6 @@
 "use client"
 
-import { motion } from "framer-motion"
+import { Motion } from "../components/animation-provider"
 import { Helmet } from "react-helmet-async"
 import { Link } from "react-router-dom"
 import {
@@ -33,7 +33,7 @@ const Solutions = () => {
         <section className="hero-bg min-h-screen flex items-center relative overflow-hidden">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
             <div className="text-center">
-              <motion.div initial={{ opacity: 0, y: 50 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
+              <Motion.div initial={{ opacity: 0, y: 50 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
                   <span className="gradient-text">CREATIVE SOLUTIONS</span>
                   <br />
@@ -43,7 +43,7 @@ const Solutions = () => {
                   Tailored creative services designed for your specific industry needs. From startups to enterprises, we
                   provide comprehensive web development, visual content, and marketing solutions that drive results.
                 </p>
-                <motion.div
+                <Motion.div
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.3 }}
@@ -51,8 +51,8 @@ const Solutions = () => {
                   <Link to="/contact" className="btn-primary">
                     EXPLORE SOLUTIONS
                   </Link>
-                </motion.div>
-              </motion.div>
+                </Motion.div>
+              </Motion.div>
             </div>
           </div>
         </section>
@@ -60,7 +60,7 @@ const Solutions = () => {
         {/* Industry Solutions */}
         <section className="py-20 bg-avocado-dark">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <motion.div
+            <Motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
@@ -72,7 +72,7 @@ const Solutions = () => {
                 We understand that different industries have unique creative challenges. Our solutions are tailored to
                 meet specific brand requirements and business objectives.
               </p>
-            </motion.div>
+            </Motion.div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               <FeatureCard
@@ -124,7 +124,7 @@ const Solutions = () => {
         {/* Service Packages */}
         <section className="bg-avocado-gray py-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <motion.div
+            <Motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
@@ -136,10 +136,10 @@ const Solutions = () => {
                 See how businesses across India are using Punk Records to transform their digital presence and
                 accelerate growth with our comprehensive creative solutions.
               </p>
-            </motion.div>
+            </Motion.div>
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-              <motion.div
+              <Motion.div
                 initial={{ opacity: 0, x: -50 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8 }}
@@ -175,9 +175,9 @@ const Solutions = () => {
                   </ul>
                   <div className="mt-4 text-avocado-green font-semibold">₹25,000/month</div>
                 </div>
-              </motion.div>
+              </Motion.div>
 
-              <motion.div
+              <Motion.div
                 initial={{ opacity: 0, x: 50 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8 }}
@@ -213,7 +213,7 @@ const Solutions = () => {
                   </ul>
                   <div className="mt-4 text-avocado-green font-semibold">Starting from ₹75,000</div>
                 </div>
-              </motion.div>
+              </Motion.div>
             </div>
           </div>
         </section>
@@ -221,7 +221,7 @@ const Solutions = () => {
         {/* Success Stories */}
         <section className="py-20 bg-avocado-dark">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <motion.div
+            <Motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
@@ -232,10 +232,10 @@ const Solutions = () => {
               <p className="text-avocado-text text-xl max-w-3xl mx-auto">
                 See how our clients have transformed their businesses with Punk Records creative solutions.
               </p>
-            </motion.div>
+            </Motion.div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <motion.div
+              <Motion.div
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0 }}
@@ -251,9 +251,9 @@ const Solutions = () => {
                   <p className="text-white font-semibold">Rajesh Sharma</p>
                   <p className="text-avocado-text text-sm">Owner, Spice Garden Restaurant, Mumbai</p>
                 </div>
-              </motion.div>
+              </Motion.div>
 
-              <motion.div
+              <Motion.div
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
@@ -269,7 +269,7 @@ const Solutions = () => {
                   <p className="text-white font-semibold">Priya Mehta</p>
                   <p className="text-avocado-text text-sm">Lead Singer, Indie Band 'Echoes', Delhi</p>
                 </div>
-              </motion.div>
+              </Motion.div>
             </div>
           </div>
         </section>
@@ -277,7 +277,7 @@ const Solutions = () => {
         {/* CTA Section */}
         <section className="bg-gradient-to-br from-avocado-green/10 to-avocado-dark py-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <motion.div
+            <Motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
@@ -296,7 +296,7 @@ const Solutions = () => {
                   VIEW PORTFOLIO
                 </Link>
               </div>
-            </motion.div>
+            </Motion.div>
           </div>
         </section>
       </div>

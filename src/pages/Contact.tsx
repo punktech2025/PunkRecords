@@ -1,4 +1,4 @@
-import { motion } from "framer-motion"
+import { Motion } from "../components/animation-provider"
 import { Helmet } from "react-helmet-async"
 import MatrixBackground from "../components/MatrixBackground"
 import { useState } from "react"
@@ -33,7 +33,7 @@ const Contact = () => {
         
         <div className="relative z-10">
           <div className="container mx-auto px-4 py-20">
-            <motion.div
+            <Motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
@@ -45,10 +45,10 @@ const Contact = () => {
               <p className="text-xl text-gray-300 max-w-3xl mx-auto">
                 Ready to start your next creative project? Let's discuss how we can help bring your vision to life.
               </p>
-            </motion.div>
+            </Motion.div>
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-              <motion.div
+              <Motion.div
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
@@ -99,9 +99,9 @@ const Contact = () => {
                     </a>
                   </div>
                 </div>
-              </motion.div>
+              </Motion.div>
 
-              <motion.div
+              <Motion.div
                 initial={{ opacity: 0, x: 20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.6, delay: 0.4 }}
@@ -177,7 +177,7 @@ const Contact = () => {
                     {isSubmitting ? "Sending..." : "Send Message"}
                   </button>
                 </form>
-              </motion.div>
+              </Motion.div>
             </div>
           </div>
         </div>

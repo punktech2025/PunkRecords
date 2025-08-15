@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion'
+import { Motion } from '../../components/animation-provider'
 import { Helmet } from 'react-helmet-async'
 import { 
   CodeBracketIcon, 
@@ -63,7 +63,7 @@ const WebDev = () => {
         {/* Hero Section */}
         <section className="relative z-10 py-20 px-4">
           <div className="max-w-7xl mx-auto text-center">
-            <motion.div
+            <Motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
@@ -78,9 +78,9 @@ const WebDev = () => {
               <p className="text-xl md:text-2xl text-green-100 max-w-4xl mx-auto leading-relaxed">
                 Building the future of digital experiences with cutting-edge technology and innovative solutions
               </p>
-            </motion.div>
+            </Motion.div>
 
-            <motion.div
+            <Motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
@@ -94,14 +94,14 @@ const WebDev = () => {
                   {tech}
                 </span>
               ))}
-            </motion.div>
+            </Motion.div>
           </div>
         </section>
 
         {/* Service Categories */}
         <section className="relative z-10 py-20 px-4">
           <div className="max-w-7xl mx-auto">
-            <motion.div
+            <Motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
@@ -113,11 +113,11 @@ const WebDev = () => {
               <p className="text-xl text-green-100 max-w-3xl mx-auto">
                 Three specialized divisions working together to deliver comprehensive digital solutions
               </p>
-            </motion.div>
+            </Motion.div>
 
             <div className="grid md:grid-cols-3 gap-8">
               {services.map((service, index) => (
-                <motion.div
+                <Motion.div
                   key={service.name}
                   initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -138,7 +138,7 @@ const WebDev = () => {
                       </li>
                     ))}
                   </ul>
-                </motion.div>
+                </Motion.div>
               ))}
             </div>
           </div>
@@ -147,7 +147,7 @@ const WebDev = () => {
         {/* Features Section */}
         <section className="relative z-10 py-20 px-4 bg-green-800/10">
           <div className="max-w-7xl mx-auto">
-            <motion.div
+            <Motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
@@ -159,11 +159,11 @@ const WebDev = () => {
               <p className="text-xl text-green-100 max-w-3xl mx-auto">
                 We combine technical expertise with creative innovation to deliver exceptional results
               </p>
-            </motion.div>
+            </Motion.div>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
               {features.map((feature, index) => (
-                <motion.div
+                <Motion.div
                   key={feature.title}
                   initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -179,7 +179,7 @@ const WebDev = () => {
                   <p className="text-green-100 leading-relaxed">
                     {feature.description}
                   </p>
-                </motion.div>
+                </Motion.div>
               ))}
             </div>
           </div>
@@ -188,7 +188,7 @@ const WebDev = () => {
         {/* CTA Section */}
         <section className="relative z-10 py-20 px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <motion.div
+            <Motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
@@ -209,7 +209,7 @@ const WebDev = () => {
                   <span>View Portfolio</span>
                 </button>
               </div>
-            </motion.div>
+            </Motion.div>
           </div>
         </section>
       </div>

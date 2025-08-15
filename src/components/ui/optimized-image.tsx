@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
+import { AnimatePresence } from 'framer-motion'
+import { Motion } from '../animation-provider'
 
 interface OptimizedImageProps {
   src: string
@@ -37,7 +38,7 @@ export const OptimizedImage = ({
     <div className={`relative overflow-hidden ${className}`} style={{ width, height }}>
       <AnimatePresence mode="wait">
         {isLoading && (
-          <motion.div
+          <Motion.div
             key="placeholder"
             className="absolute inset-0 bg-gray-200 animate-pulse"
             initial={{ opacity: 0 }}
@@ -46,7 +47,7 @@ export const OptimizedImage = ({
           />
         )}
         {currentSrc && (
-          <motion.img
+          <Motion.img
             key="image"
             src={currentSrc}
             alt={alt}

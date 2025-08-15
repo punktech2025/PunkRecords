@@ -1,4 +1,5 @@
-import { motion, AnimatePresence } from "framer-motion"
+import { AnimatePresence } from "framer-motion"
+import { Motion } from "./animation-provider"
 import { useEffect, useState, useCallback, useRef } from "react"
 
 // Reduced symbols for better performance
@@ -104,7 +105,7 @@ const MatrixBackground = () => {
     <div className="fixed inset-0 pointer-events-none overflow-hidden z-0 opacity-40">
       <AnimatePresence mode="sync">
         {fallingSymbols.map((symbol) => (
-          <motion.div
+          <Motion.div
             key={symbol.id}
             className="absolute text-white select-none"
             style={{
@@ -128,7 +129,7 @@ const MatrixBackground = () => {
             }}
           >
             {symbol.symbol}
-          </motion.div>
+          </Motion.div>
         ))}
       </AnimatePresence>
     </div>
