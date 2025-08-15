@@ -7,9 +7,8 @@
     }
   ],
   "mimeTypes": {
-    ".js": "text/javascript",
-    ".mjs": "text/javascript",
-    ".tsx": "text/javascript"
+    ".js": "application/javascript",
+    ".mjs": "application/javascript"
   },
   "globalHeaders": {
     "Cache-Control": "no-cache"
