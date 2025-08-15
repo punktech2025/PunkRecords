@@ -1,16 +1,14 @@
 import { motion, AnimatePresence } from "framer-motion"
 import { useEffect, useState, useCallback, useRef } from "react"
 
-// Music and tech symbols for the Matrix effect
+// Reduced symbols for better performance
 const symbols = [
-  // Music symbols
-  "♪", "♫", "♬", "♭", "♮", "♯", "𝄞", "𝄢", "𝄡", "𝅘𝅥", "𝅘𝅥𝅮", "𝅘𝅥𝅯", "𝅘𝅥𝅰",
-  // Tech symbols  
-  "💻", "📱", "📷", "🎥", "⌚", "🖥️", "📺", "📡", "🎧", "🎤", "🎹", "🥁", "🎸",
-  // Additional tech characters
-  "⌘", "⌥", "⌃", "⇧", "⏎", "⌫", "⌦", "⇥", "⇤", "↑", "↓", "←", "→",
-  // Binary and code symbols
-  "0", "1", "{", "}", "[", "]", "(", ")", "<", ">", "/", "\\", "|", "&", "@", "#"
+  // Music symbols (reduced)
+  "♪", "♫", "♬", "♭", "♮", "♯",
+  // Tech symbols (reduced)
+  "💻", "📱", "📷", "🎥", "🎧", "🎤", "🎹", "🥁", "🎸",
+  // Binary and code symbols (reduced)
+  "0", "1", "{", "}", "[", "]", "(", ")", "<", ">", "/", "\\"
 ]
 
 interface FallingSymbol {
@@ -35,19 +33,21 @@ const MatrixBackground = () => {
       id: `symbol-${nextIdRef.current++}`,
       symbol: symbols[Math.floor(Math.random() * symbols.length)],
       x: Math.random() * 100, // Percentage across screen
-      duration: 4 + Math.random() * 6, // 4-10 second fall time for smoother effect
-      opacity: 0.3 + Math.random() * 0.4, // 0.3-0.7 opacity
-      size: 0.8 + Math.random() * 0.8, // 0.8-1.6rem font size
+      duration: 6 + Math.random() * 4, // 6-10 second fall time for smoother effect
+      opacity: 0.2 + Math.random() * 0.3, // Reduced opacity for better performance
+      size: 0.8 + Math.random() * 0.6, // Reduced size variation
       startTime: Date.now(),
     }
   }, [])
 
-  // Add symbols continuously
+  // Add symbols continuously with performance optimization
   const addSymbol = useCallback(() => {
     setFallingSymbols(prev => {
       const newSymbol = createSymbol()
       // Keep only active symbols (remove old ones to prevent memory leak)
       const activeSymbols = prev.filter(s => Date.now() - s.startTime < s.duration * 1000 + 1000)
+      // Limit total symbols for better performance
+      if (activeSymbols.length >= 40) return activeSymbols
       return [...activeSymbols, newSymbol]
     })
   }, [createSymbol])
@@ -60,30 +60,34 @@ const MatrixBackground = () => {
   }, [])
 
   useEffect(() => {
-    // Initial batch of symbols
+    // Initial batch of symbols - reduced count for better performance
     const initialSymbols: FallingSymbol[] = []
-    const symbolCount = Math.min(80, Math.max(40, Math.floor(window.innerWidth / 20)))
+    const symbolCount = Math.min(30, Math.max(20, Math.floor(window.innerWidth / 40)))
     
     for (let i = 0; i < symbolCount; i++) {
       const symbol = createSymbol()
       // Stagger initial symbols across time
-      symbol.startTime = Date.now() - Math.random() * 5000
+      symbol.startTime = Date.now() - Math.random() * 3000
       initialSymbols.push(symbol)
     }
     setFallingSymbols(initialSymbols)
 
-    // Continuously add new symbols
-    intervalRef.current = setInterval(addSymbol, 200) // Add symbol every 200ms
+    // Continuously add new symbols - reduced frequency for better performance
+    intervalRef.current = setInterval(addSymbol, 300) // Increased from 200ms to 300ms
 
     // Cleanup old symbols periodically
-    const cleanupInterval = setInterval(cleanupSymbols, 2000)
+    const cleanupInterval = setInterval(cleanupSymbols, 3000) // Increased from 2000ms to 3000ms
 
-    // Handle window resize
+    // Handle window resize with throttling
+    let resizeTimeout: NodeJS.Timeout
     const handleResize = () => {
-      // Don't regenerate all, just adjust the addition rate
-      clearInterval(intervalRef.current!)
-      const newRate = Math.max(100, Math.min(300, 5000 / window.innerWidth))
-      intervalRef.current = setInterval(addSymbol, newRate)
+      clearTimeout(resizeTimeout)
+      resizeTimeout = setTimeout(() => {
+        // Don't regenerate all, just adjust the addition rate
+        clearInterval(intervalRef.current!)
+        const newRate = Math.max(200, Math.min(400, 6000 / window.innerWidth))
+        intervalRef.current = setInterval(addSymbol, newRate)
+      }, 100)
     }
     window.addEventListener('resize', handleResize)
 
@@ -91,122 +95,42 @@ const MatrixBackground = () => {
       if (intervalRef.current) clearInterval(intervalRef.current)
       clearInterval(cleanupInterval)
       if (animationRef.current) cancelAnimationFrame(animationRef.current)
+      clearTimeout(resizeTimeout)
       window.removeEventListener('resize', handleResize)
     }
   }, [addSymbol, cleanupSymbols, createSymbol])
 
   return (
-    <div className="fixed inset-0 pointer-events-none overflow-hidden z-0">
+    <div className="fixed inset-0 pointer-events-none overflow-hidden z-0 opacity-40">
       <AnimatePresence mode="sync">
-        {fallingSymbols.map((item) => (
-          <div key={item.id} className="absolute" style={{ left: `${item.x}%` }}>
-            {/* Shadow trail effect */}
-            <motion.div
-              className="absolute text-avocado-green/20 matrix-symbol matrix-trail select-none"
-              style={{
-                fontSize: `${item.size}rem`,
-                filter: `blur(2px)`,
-              }}
-              initial={{ y: -50, opacity: 0 }}
-              animate={{
-                y: window.innerHeight + 50,
-                opacity: [0, item.opacity * 0.3, item.opacity * 0.2, 0],
-              }}
-              transition={{
-                duration: item.duration,
-                ease: "linear",
-                times: [0, 0.1, 0.8, 1],
-              }}
-            >
-              {item.symbol}
-            </motion.div>
-            
-            {/* Second trail for more depth */}
-            <motion.div
-              className="absolute text-avocado-green/30 matrix-symbol matrix-trail select-none"
-              style={{
-                fontSize: `${item.size}rem`,
-                filter: `blur(1px)`,
-                transform: `translateY(-15px)`,
-              }}
-              initial={{ y: -35, opacity: 0 }}
-              animate={{
-                y: window.innerHeight + 35,
-                opacity: [0, item.opacity * 0.4, item.opacity * 0.3, 0],
-              }}
-              transition={{
-                duration: item.duration,
-                ease: "linear",
-                times: [0, 0.1, 0.8, 1],
-              }}
-            >
-              {item.symbol}
-            </motion.div>
-            
-            {/* Third trail for even more depth */}
-            <motion.div
-              className="absolute text-avocado-green/10 matrix-symbol matrix-trail select-none"
-              style={{
-                fontSize: `${item.size}rem`,
-                filter: `blur(3px)`,
-                transform: `translateY(-30px)`,
-              }}
-              initial={{ y: -20, opacity: 0 }}
-              animate={{
-                y: window.innerHeight + 20,
-                opacity: [0, item.opacity * 0.2, item.opacity * 0.1, 0],
-              }}
-              transition={{
-                duration: item.duration,
-                ease: "linear",
-                times: [0, 0.1, 0.8, 1],
-              }}
-            >
-              {item.symbol}
-            </motion.div>
-            
-            {/* Main symbol */}
-            <motion.div
-              className="absolute text-avocado-green matrix-symbol matrix-glow matrix-container select-none"
-              style={{
-                fontSize: `${item.size}rem`,
-                opacity: item.opacity,
-                filter: `blur(${Math.random() * 0.2}px)`,
-                textShadow: `
-                  0 0 5px currentColor,
-                  0 0 10px currentColor,
-                  0 0 15px currentColor,
-                  0 -20px 10px rgba(124, 179, 66, 0.3),
-                  0 -40px 20px rgba(124, 179, 66, 0.2),
-                  0 -60px 30px rgba(124, 179, 66, 0.1)
-                `,
-              }}
-              initial={{ y: -50, opacity: 0 }}
-              animate={{
-                y: window.innerHeight + 50,
-                opacity: [0, item.opacity, item.opacity * 0.9, 0],
-              }}
-              transition={{
-                duration: item.duration,
-                ease: "linear",
-                times: [0, 0.05, 0.85, 1],
-              }}
-              onAnimationComplete={() => {
-                // Remove symbol after animation completes
-                setFallingSymbols(prev => prev.filter(s => s.id !== item.id))
-              }}
-            >
-              {item.symbol}
-            </motion.div>
-          </div>
+        {fallingSymbols.map((symbol) => (
+          <motion.div
+            key={symbol.id}
+            className="absolute text-white select-none"
+            style={{
+              left: `${symbol.x}%`,
+              fontSize: `${symbol.size}rem`,
+              opacity: symbol.opacity,
+            }}
+            initial={{ y: -50, opacity: 0 }}
+            animate={{
+              y: `calc(100vh + 50px)`,
+              opacity: [0, symbol.opacity, symbol.opacity, 0],
+            }}
+            transition={{
+              duration: symbol.duration,
+              ease: "linear",
+              times: [0, 0.1, 0.9, 1],
+            }}
+            onAnimationComplete={() => {
+              // Clean up completed animations
+              setFallingSymbols(prev => prev.filter(s => s.id !== symbol.id))
+            }}
+          >
+            {symbol.symbol}
+          </motion.div>
         ))}
       </AnimatePresence>
-      
-      {/* Gradient overlay to fade symbols at edges */}
-      <div className="absolute inset-0 bg-gradient-to-b from-background/30 via-transparent to-background/30 pointer-events-none" />
-      
-      {/* Additional atmospheric effect */}
-      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-avocado-green/5 to-transparent pointer-events-none" />
     </div>
   )
 }

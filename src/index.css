@@ -15,15 +15,32 @@ body {
   background-color: #0a0a0a;
   color: #e0e0e0;
   line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 }
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
-/* Custom scrollbar */
+/* Performance optimizations */
+* {
+  transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
+}
+
+/* Optimize transitions for better performance */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+    animation: none !important;
+  }
+}
+
+/* Custom scrollbar - optimized for performance */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 6px;
 }
 
 ::-webkit-scrollbar-track {
@@ -32,16 +49,11 @@ html {
 
 ::-webkit-scrollbar-thumb {
   background: #7cb342;
-  border-radius: 4px;
+  border-radius: 3px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
   background: #689f38;
-}
-
-/* Smooth transitions */
-* {
-  transition: all 0.3s ease;
 }
 
 /* CSS Variables for service themes */
@@ -52,10 +64,10 @@ html {
   --theme-highlight: #FF9800;
 }
 
-/* Custom button styles */
+/* Responsive button styles */
 .btn-primary {
   background-color: var(--theme-primary);
-  @apply text-white px-6 py-3 rounded-md font-semibold transition-all duration-300 transform hover:scale-105;
+  @apply text-white px-4 py-2 sm:px-6 sm:py-3 rounded-md font-semibold transition-all duration-200 transform hover:scale-105 active:scale-95;
 }
 
 .btn-primary:hover {
@@ -63,15 +75,15 @@ html {
 }
 
 .btn-secondary {
-  @apply border border-avocado-green text-avocado-green px-6 py-3 rounded-md font-semibold hover:bg-avocado-green hover:text-white transition-all duration-300;
+  @apply border border-avocado-green text-avocado-green px-4 py-2 sm:px-6 sm:py-3 rounded-md font-semibold hover:bg-avocado-green hover:text-white transition-all duration-200;
 }
 
-/* Card hover effects */
+/* Responsive card styles */
 .feature-card {
-  @apply bg-avocado-gray p-6 rounded-lg border border-avocado-light-gray hover:border-avocado-green transition-all duration-300 transform hover:scale-105 hover:shadow-xl;
+  @apply bg-avocado-gray p-4 sm:p-6 rounded-lg border border-avocado-light-gray hover:border-avocado-green transition-all duration-200 transform hover:scale-105 hover:shadow-xl;
 }
 
-/* Gradient text */
+/* Gradient text - optimized */
 .gradient-text {
   background: linear-gradient(135deg, #7cb342 0%, #4fc3f7 100%);
   -webkit-background-clip: text;
@@ -79,7 +91,7 @@ html {
   background-clip: text;
 }
 
-/* Hero section background */
+/* Hero section background - optimized */
 .hero-bg {
   background: linear-gradient(135deg, rgba(124, 179, 66, 0.1) 0%, rgba(10, 10, 10, 0.95) 50%, rgba(10, 10, 10, 1) 100%);
   position: relative;
@@ -113,70 +125,134 @@ html {
   overflow: hidden;
 }
 
-/* Service-specific animations */
+/* Service-specific animations - optimized for performance */
 @keyframes musicPulse {
   0%, 100% { 
-    transform: scale(1);
-    box-shadow: 0 0 20px var(--theme-primary);
+    transform: scale(1) translateZ(0);
+    box-shadow: 0 0 15px var(--theme-primary);
   }
   50% { 
-    transform: scale(1.05);
-    box-shadow: 0 0 30px var(--theme-primary);
+    transform: scale(1.02) translateZ(0);
+    box-shadow: 0 0 20px var(--theme-primary);
   }
 }
 
 @keyframes webFloat {
   0%, 100% { 
-    transform: translateY(0px) rotate(0deg);
+    transform: translateY(0px) rotate(0deg) translateZ(0);
   }
   25% { 
-    transform: translateY(-10px) rotate(2deg);
+    transform: translateY(-8px) rotate(1deg) translateZ(0);
   }
   75% { 
-    transform: translateY(10px) rotate(-2deg);
+    transform: translateY(8px) rotate(-1deg) translateZ(0);
   }
 }
 
 @keyframes photoFade {
   0%, 100% { 
-    opacity: 0.7;
+    opacity: 0.8;
     filter: brightness(1);
   }
   50% { 
     opacity: 1;
-    filter: brightness(1.2);
+    filter: brightness(1.1);
   }
 }
 
 @keyframes videoSlide {
   0% { 
-    transform: translateX(-20px);
+    transform: translateX(-15px) translateZ(0);
     opacity: 0;
   }
   100% { 
-    transform: translateX(0);
+    transform: translateX(0) translateZ(0);
     opacity: 1;
   }
 }
 
-/* Service theme classes */
+/* Service theme classes - optimized */
 .theme-music .btn-primary {
-  animation: musicPulse 2s ease-in-out infinite;
+  animation: musicPulse 3s ease-in-out infinite;
 }
 
 .theme-web .feature-card {
-  animation: webFloat 4s ease-in-out infinite;
+  animation: webFloat 5s ease-in-out infinite;
 }
 
 .theme-photography .gradient-text {
-  animation: photoFade 3s ease-in-out infinite;
+  animation: photoFade 4s ease-in-out infinite;
 }
 
 .theme-video .hero-bg {
-  animation: videoSlide 2.5s ease-in-out infinite;
+  animation: videoSlide 3s ease-in-out infinite;
 }
 
-/* Dynamic theme transitions */
-* {
-  transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
+/* Mobile-first responsive design */
+@media (max-width: 640px) {
+  .btn-primary, .btn-secondary {
+    @apply px-3 py-2 text-sm;
+  }
+  
+  .feature-card {
+    @apply p-3;
+  }
+  
+  .hero-bg::before {
+    background-image: radial-gradient(circle at 20% 50%, rgba(124, 179, 66, 0.05) 0%, transparent 50%),
+      radial-gradient(circle at 80% 20%, rgba(79, 195, 247, 0.05) 0%, transparent 50%);
+  }
+}
+
+@media (max-width: 768px) {
+  .gradient-text {
+    background: linear-gradient(135deg, #7cb342 0%, #4fc3f7 100%);
+  }
+  
+  .hero-bg::before {
+    background-image: radial-gradient(circle at 20% 50%, rgba(124, 179, 66, 0.08) 0%, transparent 50%),
+      radial-gradient(circle at 80% 20%, rgba(79, 195, 247, 0.08) 0%, transparent 50%);
+  }
+}
+
+@media (min-width: 1024px) {
+  .btn-primary, .btn-secondary {
+    @apply px-8 py-4 text-lg;
+  }
+  
+  .feature-card {
+    @apply p-8;
+  }
+}
+
+/* High DPI displays optimization */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .gradient-text {
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+/* Touch device optimizations */
+@media (hover: none) and (pointer: coarse) {
+  .btn-primary:hover, .btn-secondary:hover {
+    transform: none;
+  }
+  
+  .feature-card:hover {
+    transform: none;
+  }
+}
+
+/* Print styles */
+@media print {
+  .hero-bg::before,
+  .particles,
+  .matrix-background {
+    display: none !important;
+  }
+  
+  * {
+    transition: none !important;
+    animation: none !important;
+  }
 }

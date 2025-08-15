@@ -9,8 +9,6 @@ import {
   VideoCameraIcon,
   PaintBrushIcon,
   MegaphoneIcon,
-  ChartBarIcon,
-  PencilIcon,
   MusicalNoteIcon,
   CodeBracketIcon,
 } from "@heroicons/react/24/outline"

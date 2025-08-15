@@ -1,7 +1,7 @@
 'use client'
 
 import * as React from 'react'
-import { createContext, useContext, useEffect, useState } from 'react'
+import { createContext, useContext, useEffect, useState, useMemo, useCallback } from 'react'
 
 // Creative service themes
 type CreativeTheme = 'music' | 'web' | 'photography' | 'video' | 'default'
@@ -19,8 +19,8 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
   const [theme, setTheme] = useState<CreativeTheme>('default')
   const [isDark, setIsDark] = useState(true)
 
-  // Service-specific color schemes based on Punk Records branding
-  const serviceColors = {
+  // Service-specific color schemes based on Punk Records branding - memoized for performance
+  const serviceColors = useMemo(() => ({
     music: {
       primary: '#FFD700',      // Gold - brand color
       secondary: '#1A1A1A',    // Dark gray - headphones
@@ -51,28 +51,39 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
       accent: '#FFC107',       // Amber - complementary
       highlight: '#FFE57F'     // Light gold - highlights
     }
-  }
+  }), [])
+
+  // Memoized theme setter to prevent unnecessary re-renders
+  const setThemeOptimized = useCallback((newTheme: CreativeTheme) => {
+    setTheme(newTheme)
+  }, [])
+
+  // Memoized dark mode toggle
+  const toggleDark = useCallback(() => setIsDark(prev => !prev), [])
 
   useEffect(() => {
-    // Apply theme colors to CSS variables
+    // Apply theme colors to CSS variables - optimized to only run when theme changes
     const currentColors = serviceColors[theme]
-    document.documentElement.style.setProperty('--theme-primary', currentColors.primary)
-    document.documentElement.style.setProperty('--theme-secondary', currentColors.secondary)
-    document.documentElement.style.setProperty('--theme-accent', currentColors.accent)
-    document.documentElement.style.setProperty('--theme-highlight', currentColors.highlight)
+    const root = document.documentElement
+    
+    // Batch DOM updates for better performance
+    requestAnimationFrame(() => {
+      root.style.setProperty('--theme-primary', currentColors.primary)
+      root.style.setProperty('--theme-secondary', currentColors.secondary)
+      root.style.setProperty('--theme-accent', currentColors.accent)
+      root.style.setProperty('--theme-highlight', currentColors.highlight)
+    })
     
     // Apply dark/light mode
-    document.documentElement.classList.toggle('dark', isDark)
-  }, [theme, isDark])
+    root.classList.toggle('dark', isDark)
+  }, [theme, isDark, serviceColors])
 
-  const toggleDark = React.useCallback(() => setIsDark(prev => !prev), [])
-
-  const value = React.useMemo(() => ({
+  const value = useMemo(() => ({
     theme,
-    setTheme,
+    setTheme: setThemeOptimized,
     isDark,
     toggleDark
-  }), [theme, isDark])
+  }), [theme, setThemeOptimized, isDark, toggleDark])
 
   return (
     <ThemeContext.Provider value={value}>
@@ -92,22 +103,23 @@ const useThemeContext = () => {
 
 export const useTheme = useThemeContext
 
+// Memoized theme setters for better performance
 export const useMusicTheme = () => {
   const { setTheme } = useThemeContext()
-  return React.useCallback(() => setTheme('music'), [setTheme])
+  return useCallback(() => setTheme('music'), [setTheme])
 }
 
 export const useWebTheme = () => {
   const { setTheme } = useThemeContext()
-  return React.useCallback(() => setTheme('web'), [setTheme])
+  return useCallback(() => setTheme('web'), [setTheme])
 }
 
 export const usePhotographyTheme = () => {
   const { setTheme } = useThemeContext()
-  return React.useCallback(() => setTheme('photography'), [setTheme])
+  return useCallback(() => setTheme('photography'), [setTheme])
 }
 
 export const useVideoTheme = () => {
   const { setTheme } = useThemeContext()
-  return React.useCallback(() => setTheme('video'), [setTheme])
+  return useCallback(() => setTheme('video'), [setTheme])
 }
