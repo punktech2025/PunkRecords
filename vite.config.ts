@@ -9,7 +9,7 @@ export default defineConfig({
     include: ["react", "react-dom", "react-router-dom", "framer-motion"],
   },
   build: {
-    target: 'esnext',
+    target: 'es2020',
     minify: 'terser',
     cssMinify: true,
     reportCompressedSize: true,
