@@ -35,7 +35,7 @@ const Home = () => {
       title: "WEB DEVELOPMENT & DIGITAL SOLUTIONS",
       subtitle: "Building Digital Excellence",
       description: "Cutting-edge web development, mobile apps, and digital solutions that drive business growth and create engaging user experiences for the modern digital landscape.",
-      heroImage: "/web-development-1.png",
+      heroImage: "/creative-agency-workspace.png",
       features: [
         { icon: <CodeBracketIcon className="w-8 h-8 text-white" />, title: "Web Development", description: "Custom websites and web applications built with modern technologies.", color: "bg-green-500" },
         { icon: <VideoCameraIcon className="w-8 h-8 text-white" />, title: "Mobile Apps", description: "Native and cross-platform mobile applications for iOS and Android.", color: "bg-blue-500" },
@@ -71,7 +71,7 @@ const Home = () => {
       title: "CREATIVE DIGITAL SOLUTIONS",
       subtitle: "Innovation Meets Creativity",
       description: "Transform your brand with our comprehensive creative and marketing solutions tailored for the Indian market.",
-      heroImage: "/web-development-1.png",
+      heroImage: "/creative-agency-workspace.png",
       features: [
         { icon: <VideoCameraIcon className="w-8 h-8 text-white" />, title: "Video Production & Editing", description: "Professional video production, editing, and post-production services for corporate, promotional, and social media content.", color: "bg-avocado-blue" },
         { icon: <CameraIcon className="w-8 h-8 text-white" />, title: "Photography Services", description: "High-quality photography for products, events, corporate headshots, and brand storytelling across all industries.", color: "bg-avocado-purple" },

@@ -5,6 +5,7 @@ import { imagetools } from "vite-imagetools"
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react(), imagetools()],
+  publicDir: 'public',
   optimizeDeps: {
     include: ["react", "react-dom", "react-router-dom", "framer-motion"],
   },
