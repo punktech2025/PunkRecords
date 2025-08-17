@@ -1,0 +1,52 @@
+# Robots.txt for punktech.in - Wedding Photography & Creative Services
+# Optimized for maximum SEO visibility
+
+User-agent: *
+Allow: /
+
+# Priority crawling for wedding photography content
+Allow: /services/photo-video
+Allow: /services/
+Allow: /contact
+Allow: /reveal
+
+# Sitemap location
+Sitemap: https://punktech.in/sitemap.xml
+
+# Crawl-delay for respectful crawling
+Crawl-delay: 1
+
+# Specific instructions for major search engines
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Slurp
+Allow: /
+Crawl-delay: 1
+
+# Block unnecessary files to save crawl budget
+Disallow: /node_modules/
+Disallow: /src/
+Disallow: /.git/
+Disallow: /dist/
+Disallow: *.json$
+Disallow: *.map$
+Disallow: /api/
+
+# Allow important static assets
+Allow: /*.css$
+Allow: /*.js$
+Allow: /*.png$
+Allow: /*.jpg$
+Allow: /*.jpeg$
+Allow: /*.webp$
+Allow: /*.svg$
+
+# Additional sitemaps for different content types
+Sitemap: https://punktech.in/image-sitemap.xml
+Sitemap: https://punktech.in/video-sitemap.xml

@@ -56,8 +56,61 @@ const Music = () => {
   return (
     <>
       <Helmet>
-        <title>Music Production - Punk Records</title>
-        <meta name="description" content="Professional music production, recording, and artist development services at Punk Records Studio." />
+        <title>Music Studio Nagpur | Recording Studio | Music Production | Punk Records</title>
+        <meta name="description" content="Professional music studio and recording facility in Nagpur. Song recording, album production, bollywood music, classical music, voice over recording, dubbing studio, mixing mastering services in Maharashtra." />
+        <meta name="keywords" content="music studio nagpur, recording studio nagpur, music production nagpur, sound recording nagpur, audio recording nagpur, music recording studio nagpur, professional recording studio nagpur, song recording nagpur, album recording nagpur, jingle recording nagpur, voice over recording nagpur, dubbing studio nagpur, mixing mastering studio nagpur, music composition nagpur, background music creation nagpur, sound design nagpur, audio post production nagpur, bollywood music recording nagpur, classical music recording nagpur, devotional music recording nagpur, folk music recording nagpur, marathi music recording nagpur, hindi song recording nagpur, instrumental music recording nagpur, professional music equipment nagpur, music production software nagpur, audio mixing console nagpur, studio monitors nagpur, microphone rental nagpur, singer recording studio nagpur, musician recording studio nagpur, band recording studio nagpur, artist recording studio nagpur, music producer nagpur, sound engineer nagpur, civil lines nagpur, sitabuldi nagpur, dharampeth nagpur, sadar nagpur, itwari nagpur, kamptee nagpur, hingna nagpur, katol nagpur, wardha, chandrapur, gondia, bhandara, amravati, akola, yavatmal, gadchiroli, punktech music, punk records studio" />
+        
+        {/* Open Graph Meta Tags */}
+        <meta property="og:title" content="Music Studio Nagpur | Recording Studio | Music Production | Punk Records" />
+        <meta property="og:description" content="Professional music studio and recording facility in Nagpur offering song recording, music production, and audio services." />
+        <meta property="og:type" content="service" />
+        <meta property="og:url" content="https://punktech.in/services/music" />
+        <meta property="og:image" content="https://punktech.in/music-production-1.png" />
+        <meta property="og:site_name" content="Punk Records Creative Studio" />
+        <meta property="og:locale" content="en_IN" />
+        
+        {/* Twitter Card Meta Tags */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="@punktechstudio" />
+        <meta name="twitter:title" content="Music Studio Nagpur | Recording Studio | Punk Records" />
+        <meta name="twitter:description" content="Professional music studio and recording facility in Nagpur" />
+        <meta name="twitter:image" content="https://punktech.in/music-production-1.png" />
+        
+        {/* Additional SEO Meta Tags */}
+        <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+        <meta name="geo.region" content="IN-MH" />
+        <meta name="geo.placename" content="Nagpur" />
+        <link rel="canonical" href="https://punktech.in/services/music" />
+        
+        {/* Structured Data for Music Studio Service */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Service",
+            "name": "Music Studio & Recording Services Nagpur",
+            "description": "Professional music studio and recording services in Nagpur including song recording, music production, voice over recording, and audio post production.",
+            "provider": {
+              "@type": "Organization",
+              "name": "Punk Records Creative Studio",
+              "url": "https://punktech.in",
+              "logo": "https://punktech.in/logo.png",
+              "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Nagpur",
+                "addressRegion": "Maharashtra",
+                "addressCountry": "IN"
+              },
+              "telephone": "+91-74477-76766",
+              "email": "Vansh.Rajak@punktech.in"
+            },
+            "areaServed": {
+              "@type": "Place",
+              "name": "Nagpur, Maharashtra, India"
+            },
+            "serviceType": "Music Production",
+            "category": "Recording Studio"
+          })}
+        </script>
       </Helmet>
       
       <div className="min-h-screen bg-gradient-to-br from-orange-900 via-orange-800 to-orange-900 text-white relative pt-20">

@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
+  
+  <!-- Homepage - Primary Landing Page -->
+  <url>
+    <loc>https://punktech.in/</loc>
+    <lastmod>2024-12-19</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://punktech.in/wedding-hero-image.jpg</image:loc>
+      <image:title>Best Wedding Photography Studio in Nagpur</image:title>
+      <image:caption>Premier wedding photography and videography services in Nagpur</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Wedding Photography Service Pages -->
+  <url>
+    <loc>https://punktech.in/services/photo-video</loc>
+    <lastmod>2024-12-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://punktech.in/photography-videography-1.png</image:loc>
+      <image:title>Wedding Photography and Videography Services</image:title>
+      <image:caption>Professional wedding photography and cinematic videography in Nagpur</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Services Overview -->
+  <url>
+    <loc>https://punktech.in/services</loc>
+    <lastmod>2024-12-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Music Production Services -->
+  <url>
+    <loc>https://punktech.in/services/music</loc>
+    <lastmod>2024-12-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://punktech.in/music-production-1.png</image:loc>
+      <image:title>Music Production Services</image:title>
+      <image:caption>Professional music production and audio services</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Web Development Services -->
+  <url>
+    <loc>https://punktech.in/services/web-dev</loc>
+    <lastmod>2024-12-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Graphics and Design Services -->
+  <url>
+    <loc>https://punktech.in/services/graphics</loc>
+    <lastmod>2024-12-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Social Media Marketing Services -->
+  <url>
+    <loc>https://punktech.in/services/social-marketing</loc>
+    <lastmod>2024-12-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Contact Page -->
+  <url>
+    <loc>https://punktech.in/contact</loc>
+    <lastmod>2024-12-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- About/Team Page -->
+  <url>
+    <loc>https://punktech.in/team</loc>
+    <lastmod>2024-12-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Portfolio Pages -->
+  <url>
+    <loc>https://punktech.in/reveal</loc>
+    <lastmod>2024-12-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://punktech.in/protect</loc>
+    <lastmod>2024-12-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://punktech.in/solutions</loc>
+    <lastmod>2024-12-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://punktech.in/newsroom</loc>
+    <lastmod>2024-12-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <!-- Wedding Photography Landing Pages (for SEO) -->
+  <url>
+    <loc>https://punktech.in/wedding-photography-nagpur</loc>
+    <lastmod>2024-12-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://punktech.in/wedding-videography-nagpur</loc>
+    <lastmod>2024-12-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://punktech.in/pre-wedding-photography-nagpur</loc>
+    <lastmod>2024-12-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+</urlset>

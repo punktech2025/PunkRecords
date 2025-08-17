@@ -56,8 +56,61 @@ const WebDev = () => {
   return (
     <>
       <Helmet>
-        <title>Web Development - Punk Records</title>
-        <meta name="description" content="Professional web development services including custom software, web applications, and IT solutions." />
+        <title>Web Development Nagpur | Website Design | Ecommerce Development | Punk Records</title>
+        <meta name="description" content="Professional web development company in Nagpur offering custom website design, ecommerce development, mobile apps, WordPress development, and digital solutions for businesses in Maharashtra." />
+        <meta name="keywords" content="web development nagpur, website design nagpur, website development nagpur, web designer nagpur, web developer nagpur, website company nagpur, digital agency nagpur, ecommerce website development nagpur, responsive web design nagpur, mobile app development nagpur, custom website development nagpur, wordpress development nagpur, php development nagpur, react development nagpur, website maintenance nagpur, domain hosting nagpur, ssl certificate nagpur, business website design nagpur, corporate website development nagpur, startup website development nagpur, small business website nagpur, professional website design nagpur, company website development nagpur, online store development nagpur, shopping website development nagpur, payment gateway integration nagpur, inventory management system nagpur, pos system development nagpur, html css developer nagpur, javascript developer nagpur, python developer nagpur, node js developer nagpur, angular developer nagpur, vue js developer nagpur, civil lines nagpur, sitabuldi nagpur, dharampeth nagpur, sadar nagpur, itwari nagpur, kamptee nagpur, hingna nagpur, katol nagpur, wardha, chandrapur, gondia, bhandara, amravati, akola, yavatmal, gadchiroli, punktech web, punk records development" />
+        
+        {/* Open Graph Meta Tags */}
+        <meta property="og:title" content="Web Development Nagpur | Website Design | Ecommerce Development | Punk Records" />
+        <meta property="og:description" content="Professional web development company in Nagpur offering custom website design and digital solutions." />
+        <meta property="og:type" content="service" />
+        <meta property="og:url" content="https://punktech.in/services/web-dev" />
+        <meta property="og:image" content="https://punktech.in/web-development-hero.jpg" />
+        <meta property="og:site_name" content="Punk Records Creative Studio" />
+        <meta property="og:locale" content="en_IN" />
+        
+        {/* Twitter Card Meta Tags */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="@punktechstudio" />
+        <meta name="twitter:title" content="Web Development Nagpur | Website Design | Punk Records" />
+        <meta name="twitter:description" content="Professional web development company in Nagpur" />
+        <meta name="twitter:image" content="https://punktech.in/web-development-hero.jpg" />
+        
+        {/* Additional SEO Meta Tags */}
+        <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+        <meta name="geo.region" content="IN-MH" />
+        <meta name="geo.placename" content="Nagpur" />
+        <link rel="canonical" href="https://punktech.in/services/web-dev" />
+        
+        {/* Structured Data for Web Development Service */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Service",
+            "name": "Web Development & Website Design Services Nagpur",
+            "description": "Professional web development services in Nagpur including custom website design, ecommerce development, mobile apps, and digital solutions.",
+            "provider": {
+              "@type": "Organization",
+              "name": "Punk Records Creative Studio",
+              "url": "https://punktech.in",
+              "logo": "https://punktech.in/logo.png",
+              "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Nagpur",
+                "addressRegion": "Maharashtra",
+                "addressCountry": "IN"
+              },
+              "telephone": "+91-74477-76766",
+              "email": "Vansh.Rajak@punktech.in"
+            },
+            "areaServed": {
+              "@type": "Place",
+              "name": "Nagpur, Maharashtra, India"
+            },
+            "serviceType": "Web Development",
+            "category": "Web Design Services"
+          })}
+        </script>
       </Helmet>
       
       <div className="min-h-screen bg-gradient-to-br from-green-900 via-green-800 to-green-900 text-white relative pt-20">

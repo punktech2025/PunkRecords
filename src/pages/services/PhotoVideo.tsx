@@ -32,31 +32,160 @@ const PhotoVideo = () => {
 
   const services = [
     {
-      name: "Punk Product",
-      description: "Professional product photography services",
-      features: ["E-commerce Photography", "Product Catalog Shoots", "Lifestyle Photography", "Studio Photography"]
+      name: "Wedding Photography & Videography",
+      description: "Premier wedding photography and cinematic videography services in Nagpur",
+      features: ["Candid Wedding Photography", "Traditional Wedding Photography", "Cinematic Wedding Films", "Drone Wedding Coverage", "Wedding Highlights Video", "Same Day Editing"]
     },
     {
-      name: "Punk Service",
-      description: "Event and service photography",
-      features: ["Corporate Events", "Product Launches", "Trade Shows", "Service Documentation"]
+      name: "Pre-Wedding & Engagement Shoots",
+      description: "Romantic pre-wedding photography and engagement sessions at beautiful Nagpur locations",
+      features: ["Pre-Wedding Photography", "Engagement Photography", "Couple Portraits", "Save the Date Photos", "Location Scouting", "Creative Concepts"]
     },
     {
-      name: "Punk Weddings",
-      description: "Wedding photography and videography",
-      features: ["Wedding Photography", "Wedding Videography", "Engagement Shoots", "Wedding Films"]
+      name: "Bridal & Special Occasions",
+      description: "Bridal portraits, mehendi, sangam, and reception photography services",
+      features: ["Bridal Portraits", "Mehendi Photography", "Sangam Photography", "Reception Coverage", "Ring Ceremony", "Haldi Photography"]
     }
   ]
 
-  const styles = [
-    "Portrait", "Landscape", "Street", "Documentary", "Fashion", "Architecture", "Nature", "Abstract", "Minimalist", "Vintage"
+  const weddingStyles = [
+    "Candid", "Traditional", "Cinematic", "Artistic", "Documentary", "Photojournalistic", "Fine Art", "Contemporary", "Classic", "Destination"
   ]
 
   return (
     <>
       <Helmet>
-        <title>Photography & Videography - Punk Records</title>
-        <meta name="description" content="Professional photography and videography services including product photography, events, and wedding coverage." />
+        <title>Wedding Photography & Videography Nagpur | Best Wedding Photographers | Punk Records</title>
+        <meta 
+          name="description" 
+          content="Premier wedding photography & videography services in Nagpur. Cinematic wedding films, pre-wedding shoots, engagement photography, and destination wedding coverage. Book Nagpur's top wedding photographers." 
+        />
+        <meta 
+          name="keywords" 
+          content="wedding photographer nagpur, wedding photography nagpur, shaadi photographer nagpur, marriage photographer nagpur, wedding videographer nagpur, wedding videography nagpur, best wedding photographer nagpur, candid wedding photographer nagpur, pre wedding photographer nagpur, destination wedding photographer nagpur, shaadi ka photographer nagpur, vivah photographer nagpur, marriage ka photographer nagpur, dulhan photographer nagpur, dulha dulhan photographer nagpur, mangalashtak photographer nagpur, lagan photographer nagpur, byah photographer nagpur, mehendi photographer nagpur, haldi photographer nagpur, sangam photographer nagpur, engagement photographer nagpur, ring ceremony photographer nagpur, reception photographer nagpur, baraat photographer nagpur, vidai photographer nagpur, sagai photographer nagpur, tilak ceremony photographer nagpur, candid wedding photography nagpur, traditional wedding photography nagpur, cinematic wedding videography nagpur, documentary wedding photography nagpur, photojournalistic wedding photography nagpur, artistic wedding photography nagpur, vintage wedding photography nagpur, contemporary wedding photography nagpur, pre wedding photoshoot nagpur, couple photoshoot nagpur, maternity photoshoot nagpur, baby photoshoot nagpur, family portrait photographer nagpur, bridal photoshoot nagpur, groom photoshoot nagpur, save the date photoshoot nagpur, anniversary photoshoot nagpur, drone wedding photography nagpur, 4k wedding videography nagpur, same day edit wedding video nagpur, wedding highlight video nagpur, wedding album design nagpur, wedding photo editing nagpur, wedding video editing nagpur, outdoor wedding photographer nagpur, destination wedding photographer india, palace wedding photographer nagpur, garden wedding photographer nagpur, beach wedding photographer goa, hill station wedding photographer, resort wedding photographer nagpur, affordable wedding photographer nagpur, cheap wedding photographer nagpur, budget wedding photography nagpur, wedding photography packages nagpur, wedding photography price nagpur, low cost wedding photographer nagpur, civil lines nagpur, sitabuldi nagpur, dharampeth nagpur, sadar nagpur, itwari nagpur, kamptee nagpur, hingna nagpur, katol nagpur, wardha, chandrapur, gondia, bhandara, amravati, akola, yavatmal, gadchiroli, punktech wedding, punk records wedding photography"
+        />
+        
+        {/* Open Graph Meta Tags */}
+        <meta property="og:title" content="Best Wedding Photography & Videography in Nagpur | Punk Records Creative Studio" />
+        <meta property="og:description" content="Capture your dream wedding with Nagpur's premier wedding photography & videography studio. Cinematic storytelling meets artistic excellence." />
+        <meta property="og:type" content="service" />
+        <meta property="og:url" content="https://punktech.in/services/photo-video" />
+        <meta property="og:image" content="https://punktech.in/wedding-portfolio-hero.jpg" />
+        <meta property="og:site_name" content="Punk Records Creative Studio" />
+        <meta property="og:locale" content="en_IN" />
+        
+        {/* Twitter Card Meta Tags */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="@punktechstudio" />
+        <meta name="twitter:title" content="Wedding Photography & Videography Nagpur | Punk Records" />
+        <meta name="twitter:description" content="Premier wedding photography and videography services in Nagpur. Cinematic wedding films and artistic photography." />
+        <meta name="twitter:image" content="https://punktech.in/wedding-portfolio-hero.jpg" />
+        
+        {/* Additional SEO Meta Tags */}
+        <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+        <meta name="geo.region" content="IN-MH" />
+        <meta name="geo.placename" content="Nagpur" />
+        <link rel="canonical" href="https://punktech.in/services/photo-video" />
+        
+        {/* Structured Data for Wedding Photography Service */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Service",
+            "name": "Wedding Photography & Videography Services Nagpur",
+            "description": "Professional wedding photography and videography services in Nagpur including pre-wedding shoots, engagement photography, bridal portraits, and cinematic wedding films.",
+            "provider": {
+              "@type": "Organization",
+              "name": "Punk Records Creative Studio",
+              "url": "https://punktech.in",
+              "logo": "https://punktech.in/logo.png",
+              "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Nagpur",
+                "@region": "Maharashtra",
+                "addressCountry": "IN"
+              },
+              "telephone": "+91-74477-76766",
+              "email": "Vansh.Rajak@punktech.in"
+            },
+            "areaServed": {
+              "@type": "Place",
+              "name": "Nagpur, Maharashtra, India"
+            },
+            "serviceType": "Wedding Photography",
+            "category": "Photography Services",
+            "hasOfferCatalog": {
+              "@type": "OfferCatalog",
+              "name": "Wedding Photography Packages",
+              "itemListElement": [
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Complete Wedding Photography Package",
+                    "description": "Full day wedding photography with multiple photographers"
+                  },
+                  "price": "75000",
+                  "priceCurrency": "INR"
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service", 
+                    "name": "Premium Wedding Photography & Videography",
+                    "description": "Complete wedding coverage with photography, videography, and pre-wedding shoot"
+                  },
+                  "price": "125000",
+                  "priceCurrency": "INR"
+                }
+              ]
+            },
+            "aggregateRating": {
+              "@type": "AggregateRating",
+              "ratingValue": "4.9",
+              "reviewCount": "87",
+              "bestRating": "5",
+              "worstRating": "1"
+            }
+          })}
+        </script>
+        
+        {/* Structured Data for Local Business */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            "name": "Punk Records Wedding Photography Studio",
+            "image": "https://punktech.in/studio-wedding-setup.jpg",
+            "telephone": "+91-74477-76766",
+            "email": "Vansh.Rajak@punktech.in",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Nagpur",
+              "addressRegion": "Maharashtra",
+              "addressCountry": "IN"
+            },
+            "geo": {
+              "@type": "GeoCoordinates",
+              "latitude": 21.1458,
+              "longitude": 79.0882
+            },
+            "url": "https://punktech.in/services/photo-video",
+            "priceRange": "₹₹₹",
+            "openingHoursSpecification": [
+              {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+                "opens": "09:00",
+                "closes": "18:00"
+              }
+            ],
+            "sameAs": [
+              "https://instagram.com/punk_record",
+              "https://facebook.com/punktechstudio"
+            ]
+          })}
+        </script>
       </Helmet>
       
       <div className="min-h-screen bg-gradient-to-br from-red-900 via-red-800 to-red-900 text-white relative pt-20">
@@ -72,11 +201,11 @@ const PhotoVideo = () => {
               <div className="inline-flex items-center justify-center w-20 h-20 bg-red-600 rounded-full mb-6">
                 <CameraIcon className="w-10 h-10 text-white" />
               </div>
-              <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-red-400 to-red-600 bg-clip-text text-transparent">
-                Photography & Videography
+              <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-rose-400 to-pink-600 bg-clip-text text-transparent">
+                Wedding Photography & Videography Nagpur
               </h1>
               <p className="text-xl md:text-2xl text-red-100 max-w-4xl mx-auto leading-relaxed">
-                Capturing moments that tell your story through stunning visuals and compelling narratives
+                Nagpur's premier wedding photography studio capturing your love story with cinematic excellence and artistic vision
               </p>
             </Motion.div>
 
@@ -86,7 +215,7 @@ const PhotoVideo = () => {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="flex flex-wrap justify-center gap-4"
             >
-              {styles.map((style) => (
+              {weddingStyles.map((style) => (
                 <span
                   key={style}
                   className="px-4 py-2 bg-red-600/20 border border-red-500/30 rounded-full text-red-300 text-sm font-medium"
@@ -108,10 +237,10 @@ const PhotoVideo = () => {
               className="text-center mb-16"
             >
               <h2 className="text-4xl md:text-5xl font-bold mb-6 text-red-300">
-                Our Photography & Video Services
+                Wedding Photography & Videography Services
               </h2>
               <p className="text-xl text-red-100 max-w-3xl mx-auto">
-                Three specialized divisions working together to capture your vision perfectly
+                Comprehensive wedding photography and videography services covering every aspect of your special day
               </p>
             </Motion.div>
 
