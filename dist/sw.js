@@ -2,13 +2,12 @@ const CACHE_NAME = 'punk-records-cache-v1';
 const STATIC_ASSETS = [
   '/',
   '/index.html',
-  '/src/main.tsx',
-  '/src/App.tsx',
-  '/src/pages/Home.tsx',
-  '/src/components/ui/loader.tsx',
-  '/src/components/CreativeBackground.tsx',
-  '/src/components/ServiceMatrixBackground.tsx',
-  '/Logo_Punk_Records-removebg-preview_Nero_AI_Image_Upscaler_Photo_Face.png'
+  '/Logo_Punk_Records-removebg-preview_Nero_AI_Image_Upscaler_Photo_Face.png',
+  '/creative-agency-workspace.png',
+  '/music-production-1.png',
+  '/music-production-2.png',
+  '/photography-videography-1.png',
+  '/photography-videography-2.png'
 ];
 
 // Install service worker and cache static assets

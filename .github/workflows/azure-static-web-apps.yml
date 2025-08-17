@@ -43,6 +43,8 @@ jobs:
         run: npm run build
         env:
           NODE_ENV: production
+          VITE_AZURE_FUNCTION_URL: ${{ secrets.VITE_AZURE_FUNCTION_URL }}
+          VITE_AZURE_FUNCTION_KEY: ${{ secrets.VITE_AZURE_FUNCTION_KEY }}
 
       - name: Debug - Check build output
         run: |
