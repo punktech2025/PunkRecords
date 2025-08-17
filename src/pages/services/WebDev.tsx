@@ -58,7 +58,7 @@ const WebDev = () => {
       <Helmet>
         <title>Web Development Nagpur | Website Design | Ecommerce Development | Punk Records</title>
         <meta name="description" content="Professional web development company in Nagpur offering custom website design, ecommerce development, mobile apps, WordPress development, and digital solutions for businesses in Maharashtra." />
-        <meta name="keywords" content="web development nagpur, website design nagpur, website development nagpur, web designer nagpur, web developer nagpur, website company nagpur, digital agency nagpur, ecommerce website development nagpur, responsive web design nagpur, mobile app development nagpur, custom website development nagpur, wordpress development nagpur, php development nagpur, react development nagpur, website maintenance nagpur, domain hosting nagpur, ssl certificate nagpur, business website design nagpur, corporate website development nagpur, startup website development nagpur, small business website nagpur, professional website design nagpur, company website development nagpur, online store development nagpur, shopping website development nagpur, payment gateway integration nagpur, inventory management system nagpur, pos system development nagpur, html css developer nagpur, javascript developer nagpur, python developer nagpur, node js developer nagpur, angular developer nagpur, vue js developer nagpur, civil lines nagpur, sitabuldi nagpur, dharampeth nagpur, sadar nagpur, itwari nagpur, kamptee nagpur, hingna nagpur, katol nagpur, wardha, chandrapur, gondia, bhandara, amravati, akola, yavatmal, gadchiroli, punktech web, punk records development" />
+        <meta name="keywords" content="web development nagpur, website design nagpur, website development nagpur, web designer nagpur, web developer nagpur, website company nagpur, digital agency nagpur, ecommerce website development nagpur, responsive web design nagpur, mobile app development nagpur, custom website development nagpur, wordpress development nagpur, php development nagpur, react development nagpur, website maintenance nagpur, domain hosting nagpur, ssl certificate nagpur, business website design nagpur, corporate website development nagpur, startup website development nagpur, small business website nagpur, professional website design nagpur, company website development nagpur, online store development nagpur, shopping website development nagpur, payment gateway integration nagpur, inventory management system nagpur, pos system development nagpur, html css developer nagpur, javascript developer nagpur, python developer nagpur, node js developer nagpur, angular developer nagpur, vue js developer nagpur, db mart ecommerce, jagmart marketplace, dishani water purifiers website, coco intimo luxury chocolate website, school erp system nagpur, fl-iv register medical system, booking app development nagpur, booking management system, it infrastructure setup nagpur, it consultation services nagpur, communication solutions nagpur, collaboration tools nagpur, cloud migration services nagpur, aws azure google cloud nagpur, voip setup nagpur, video conferencing setup, network setup nagpur, server setup nagpur, security implementation nagpur, digital transformation consulting nagpur, technology strategy nagpur, crm development nagpur, civil lines nagpur, sitabuldi nagpur, dharampeth nagpur, sadar nagpur, itwari nagpur, kamptee nagpur, hingna nagpur, katol nagpur, wardha, chandrapur, gondia, bhandara, amravati, akola, yavatmal, gadchiroli, punktech web, punk records development" />
         
         {/* Open Graph Meta Tags */}
         <meta property="og:title" content="Web Development Nagpur | Website Design | Ecommerce Development | Punk Records" />
@@ -262,6 +262,127 @@ const WebDev = () => {
                   <CpuChipIcon className="w-5 h-5" />
                   <span>View Portfolio</span>
                 </button>
+              </div>
+            </Motion.div>
+          </div>
+        </section>
+
+        {/* Our Portfolio & Project Showcase */}
+        <section className="relative z-10 py-20 px-4 bg-blue-800/10">
+          <div className="max-w-7xl mx-auto">
+            <Motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              className="text-center mb-16"
+            >
+              <h2 className="text-4xl md:text-5xl font-bold mb-6 text-blue-300">
+                Our Successful Projects & Solutions
+              </h2>
+              <p className="text-xl text-blue-100 max-w-3xl mx-auto mb-8">
+                Real projects delivered for businesses across Nagpur and Maharashtra - from ecommerce platforms to enterprise applications
+              </p>
+            </Motion.div>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+              {/* Ecommerce Projects */}
+              <Motion.div
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8 }}
+                className="bg-blue-800/20 p-6 rounded-lg border border-blue-300"
+              >
+                <h3 className="text-blue-300 font-bold text-xl mb-4">Ecommerce Solutions</h3>
+                <div className="space-y-3 text-blue-100 text-sm">
+                  <div className="bg-blue-700/20 p-3 rounded">
+                    <strong>DB Mart</strong> - Multi-vendor marketplace platform with inventory management
+                  </div>
+                  <div className="bg-blue-700/20 p-3 rounded">
+                    <strong>JagMart</strong> - Local ecommerce platform with delivery integration
+                  </div>
+                  <div className="bg-blue-700/20 p-3 rounded">
+                    <strong>Dishani Water Purifiers</strong> - Buy & rent platform with subscription management
+                  </div>
+                  <div className="bg-blue-700/20 p-3 rounded">
+                    <strong>Coco Intimo</strong> - Luxury chocolate ecommerce for couples with custom packaging
+                  </div>
+                </div>
+              </Motion.div>
+
+              {/* Enterprise Applications */}
+              <Motion.div
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.1 }}
+                className="bg-blue-800/20 p-6 rounded-lg border border-blue-300"
+              >
+                <h3 className="text-blue-300 font-bold text-xl mb-4">Enterprise Applications</h3>
+                <div className="space-y-3 text-blue-100 text-sm">
+                  <div className="bg-blue-700/20 p-3 rounded">
+                    <strong>School ERP System</strong> - Complete school management with student, teacher & parent portals
+                  </div>
+                  <div className="bg-blue-700/20 p-3 rounded">
+                    <strong>FL-IV Register</strong> - Medical facility management system with patient tracking
+                  </div>
+                  <div className="bg-blue-700/20 p-3 rounded">
+                    <strong>Booking Management App</strong> - Multi-service booking platform with calendar integration
+                  </div>
+                  <div className="bg-blue-700/20 p-3 rounded">
+                    <strong>Custom CRM Solutions</strong> - Tailored customer relationship management systems
+                  </div>
+                </div>
+              </Motion.div>
+
+              {/* IT Infrastructure & Consultation */}
+              <Motion.div
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+                className="bg-blue-800/20 p-6 rounded-lg border border-blue-300"
+              >
+                <h3 className="text-blue-300 font-bold text-xl mb-4">IT Infrastructure & Consultation</h3>
+                <div className="space-y-3 text-blue-100 text-sm">
+                  <div className="bg-blue-700/20 p-3 rounded">
+                    <strong>IT Infrastructure Setup</strong> - Complete network setup, servers & security implementation
+                  </div>
+                  <div className="bg-blue-700/20 p-3 rounded">
+                    <strong>IT Consultation Services</strong> - Technology strategy & digital transformation consulting
+                  </div>
+                  <div className="bg-blue-700/20 p-3 rounded">
+                    <strong>Communication Solutions</strong> - VoIP, video conferencing & team collaboration tools
+                  </div>
+                  <div className="bg-blue-700/20 p-3 rounded">
+                    <strong>Cloud Migration</strong> - AWS, Azure & Google Cloud deployment & management
+                  </div>
+                </div>
+              </Motion.div>
+            </div>
+
+            {/* Technology Stack & Expertise */}
+            <Motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              className="text-center bg-blue-800/20 p-8 rounded-lg border border-blue-300 mb-8"
+            >
+              <h3 className="text-2xl font-bold text-blue-300 mb-4">Our Technology Expertise</h3>
+              <div className="grid md:grid-cols-4 gap-4 mb-6">
+                <div>
+                  <h4 className="text-blue-300 font-semibold mb-2">Frontend</h4>
+                  <p className="text-blue-100 text-sm">React, Vue.js, Angular, Next.js, TypeScript</p>
+                </div>
+                <div>
+                  <h4 className="text-blue-300 font-semibold mb-2">Backend</h4>
+                  <p className="text-blue-100 text-sm">Node.js, Python, PHP, .NET, Java</p>
+                </div>
+                <div>
+                  <h4 className="text-blue-300 font-semibold mb-2">Database</h4>
+                  <p className="text-blue-100 text-sm">MySQL, PostgreSQL, MongoDB, Redis</p>
+                </div>
+                <div>
+                  <h4 className="text-blue-300 font-semibold mb-2">Cloud</h4>
+                  <p className="text-blue-100 text-sm">AWS, Azure, Google Cloud, Digital Ocean</p>
+                </div>
               </div>
             </Motion.div>
           </div>

@@ -58,7 +58,7 @@ const Music = () => {
       <Helmet>
         <title>Music Studio Nagpur | Recording Studio | Music Production | Punk Records</title>
         <meta name="description" content="Professional music studio and recording facility in Nagpur. Song recording, album production, bollywood music, classical music, voice over recording, dubbing studio, mixing mastering services in Maharashtra." />
-        <meta name="keywords" content="music studio nagpur, recording studio nagpur, music production nagpur, sound recording nagpur, audio recording nagpur, music recording studio nagpur, professional recording studio nagpur, song recording nagpur, album recording nagpur, jingle recording nagpur, voice over recording nagpur, dubbing studio nagpur, mixing mastering studio nagpur, music composition nagpur, background music creation nagpur, sound design nagpur, audio post production nagpur, bollywood music recording nagpur, classical music recording nagpur, devotional music recording nagpur, folk music recording nagpur, marathi music recording nagpur, hindi song recording nagpur, instrumental music recording nagpur, professional music equipment nagpur, music production software nagpur, audio mixing console nagpur, studio monitors nagpur, microphone rental nagpur, singer recording studio nagpur, musician recording studio nagpur, band recording studio nagpur, artist recording studio nagpur, music producer nagpur, sound engineer nagpur, civil lines nagpur, sitabuldi nagpur, dharampeth nagpur, sadar nagpur, itwari nagpur, kamptee nagpur, hingna nagpur, katol nagpur, wardha, chandrapur, gondia, bhandara, amravati, akola, yavatmal, gadchiroli, punktech music, punk records studio" />
+        <meta name="keywords" content="music studio nagpur, recording studio nagpur, music production nagpur, sound recording nagpur, audio recording nagpur, music recording studio nagpur, professional recording studio nagpur, song recording nagpur, album recording nagpur, jingle recording nagpur, voice over recording nagpur, dubbing studio nagpur, mixing mastering studio nagpur, music composition nagpur, background music creation nagpur, sound design nagpur, audio post production nagpur, bollywood music recording nagpur, classical music recording nagpur, devotional music recording nagpur, folk music recording nagpur, marathi music recording nagpur, hindi song recording nagpur, instrumental music recording nagpur, professional music equipment nagpur, music production software nagpur, audio mixing console nagpur, studio monitors nagpur, microphone rental nagpur, singer recording studio nagpur, musician recording studio nagpur, band recording studio nagpur, artist recording studio nagpur, music producer nagpur, sound engineer nagpur, recording assistance nagpur, recording label services nagpur, production house nagpur, studio live music sessions nagpur, live recording sessions nagpur, acoustic sessions nagpur, collaboration sessions nagpur, artist development nagpur, music distribution nagpur, artist management nagpur, music publishing nagpur, multi-track recording nagpur, remote recording setup nagpur, home studio assistance nagpur, music business services nagpur, rights management nagpur, music licensing nagpur, civil lines nagpur, sitabuldi nagpur, dharampeth nagpur, sadar nagpur, itwari nagpur, kamptee nagpur, hingna nagpur, katol nagpur, wardha, chandrapur, gondia, bhandara, amravati, akola, yavatmal, gadchiroli, punktech music, punk records studio" />
         
         {/* Open Graph Meta Tags */}
         <meta property="og:title" content="Music Studio Nagpur | Recording Studio | Music Production | Punk Records" />
@@ -386,6 +386,62 @@ const Music = () => {
               </Motion.div>
             </div>
 
+            {/* Extended Music Services */}
+            <Motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              className="bg-orange-800/20 p-6 rounded-lg border border-orange-300 mb-8"
+            >
+              <h3 className="text-orange-300 font-bold text-xl mb-4">Professional Music Services</h3>
+              <div className="grid md:grid-cols-2 gap-6">
+                <div>
+                  <h4 className="text-orange-300 font-semibold mb-3">Recording & Production</h4>
+                  <ul className="text-orange-100 space-y-1 text-sm">
+                    <li>• Recording Assistance - Expert guidance for artists</li>
+                    <li>• Professional Recording Sessions - Studio time with engineers</li>
+                    <li>• Multi-track Recording - Complex arrangements</li>
+                    <li>• Live Recording Sessions - Capture live performances</li>
+                    <li>• Remote Recording - Home studio setup assistance</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4 className="text-orange-300 font-semibold mb-3">Music Business Services</h4>
+                  <ul className="text-orange-100 space-y-1 text-sm">
+                    <li>• Recording Label Services - Artist development & promotion</li>
+                    <li>• Production House Operations - Complete music production</li>
+                    <li>• Music Distribution - Digital platform releases</li>
+                    <li>• Artist Management - Career guidance & bookings</li>
+                    <li>• Music Publishing - Rights management & licensing</li>
+                  </ul>
+                </div>
+              </div>
+            </Motion.div>
+
+            {/* Studio Live Sessions */}
+            <Motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              className="bg-orange-800/20 p-6 rounded-lg border border-orange-300 mb-8"
+            >
+              <h3 className="text-orange-300 font-bold text-xl mb-4">Studio Live Music Sessions</h3>
+              <div className="grid md:grid-cols-3 gap-4">
+                <div className="bg-orange-700/20 p-4 rounded">
+                  <h4 className="text-orange-300 font-semibold mb-2">Live Recording Sessions</h4>
+                  <p className="text-orange-100 text-sm">Professional live recording with multiple camera angles and high-quality audio capture for YouTube, social media, and promotional content.</p>
+                </div>
+                <div className="bg-orange-700/20 p-4 rounded">
+                  <h4 className="text-orange-300 font-semibold mb-2">Acoustic Sessions</h4>
+                  <p className="text-orange-100 text-sm">Intimate acoustic performances in our specially designed acoustic room with professional lighting and sound engineering.</p>
+                </div>
+                <div className="bg-orange-700/20 p-4 rounded">
+                  <h4 className="text-orange-300 font-semibold mb-2">Collaboration Sessions</h4>
+                  <p className="text-orange-100 text-sm">Multi-artist collaboration recordings, featuring sessions, and guest appearances with professional mixing and production.</p>
+                </div>
+              </div>
+            </Motion.div>
+
             {/* Location Coverage */}
             <Motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -402,6 +458,8 @@ const Music = () => {
                 <span className="bg-orange-600/20 text-orange-300 px-3 py-1 rounded-full text-xs">Musician Recording Studio</span>
                 <span className="bg-orange-600/20 text-orange-300 px-3 py-1 rounded-full text-xs">Band Recording Studio</span>
                 <span className="bg-orange-600/20 text-orange-300 px-3 py-1 rounded-full text-xs">Artist Recording Studio</span>
+                <span className="bg-orange-600/20 text-orange-300 px-3 py-1 rounded-full text-xs">Recording Label</span>
+                <span className="bg-orange-600/20 text-orange-300 px-3 py-1 rounded-full text-xs">Production House</span>
               </div>
             </Motion.div>
           </div>
