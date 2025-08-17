@@ -59,8 +59,61 @@ const SocialMarketing = () => {
   return (
     <>
       <Helmet>
-        <title>Social Media Marketing - Punk Records</title>
-        <meta name="description" content="Professional social media marketing, digital campaigns, and market research services." />
+        <title>Digital Marketing Nagpur | Social Media Marketing | SEO Services | Punk Records</title>
+        <meta name="description" content="Leading digital marketing agency in Nagpur offering social media marketing, SEO services, Google Ads, Facebook marketing, Instagram marketing, and comprehensive online marketing solutions for businesses in Maharashtra." />
+        <meta name="keywords" content="digital marketing nagpur, social media marketing nagpur, seo services nagpur, online marketing nagpur, internet marketing nagpur, digital marketing agency nagpur, social media agency nagpur, facebook marketing nagpur, instagram marketing nagpur, youtube marketing nagpur, linkedin marketing nagpur, twitter marketing nagpur, whatsapp marketing nagpur, google ads nagpur, facebook ads nagpur, instagram ads nagpur, seo company nagpur, content marketing nagpur, email marketing nagpur, influencer marketing nagpur, affiliate marketing nagpur, ppc management nagpur, social media management nagpur, online reputation management nagpur, restaurant marketing nagpur, real estate marketing nagpur, healthcare marketing nagpur, education marketing nagpur, ecommerce marketing nagpur, startup marketing nagpur, local seo nagpur, google my business optimization nagpur, local business marketing nagpur, nagpur business promotion, maharashtra digital marketing, digital marketing company nagpur, online advertising nagpur, search engine marketing nagpur, social media strategy nagpur, brand marketing nagpur, performance marketing nagpur, conversion optimization nagpur, analytics and reporting nagpur, civil lines nagpur, sitabuldi nagpur, dharampeth nagpur, sadar nagpur, itwari nagpur, kamptee nagpur, hingna nagpur, katol nagpur, wardha, chandrapur, gondia, bhandara, amravati, akola, yavatmal, gadchiroli, punktech marketing, punk records digital" />
+        
+        {/* Open Graph Meta Tags */}
+        <meta property="og:title" content="Digital Marketing Nagpur | Social Media Marketing | SEO Services | Punk Records" />
+        <meta property="og:description" content="Leading digital marketing agency in Nagpur offering comprehensive online marketing solutions." />
+        <meta property="og:type" content="service" />
+        <meta property="og:url" content="https://punktech.in/services/social-marketing" />
+        <meta property="og:image" content="https://punktech.in/digital-marketing-hero.jpg" />
+        <meta property="og:site_name" content="Punk Records Creative Studio" />
+        <meta property="og:locale" content="en_IN" />
+        
+        {/* Twitter Card Meta Tags */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="@punktechstudio" />
+        <meta name="twitter:title" content="Digital Marketing Nagpur | Social Media Marketing | Punk Records" />
+        <meta name="twitter:description" content="Leading digital marketing agency in Nagpur" />
+        <meta name="twitter:image" content="https://punktech.in/digital-marketing-hero.jpg" />
+        
+        {/* Additional SEO Meta Tags */}
+        <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+        <meta name="geo.region" content="IN-MH" />
+        <meta name="geo.placename" content="Nagpur" />
+        <link rel="canonical" href="https://punktech.in/services/social-marketing" />
+        
+        {/* Structured Data for Digital Marketing Service */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Service",
+            "name": "Digital Marketing & Social Media Marketing Services Nagpur",
+            "description": "Professional digital marketing services in Nagpur including social media marketing, SEO, Google Ads, and comprehensive online marketing strategies.",
+            "provider": {
+              "@type": "Organization",
+              "name": "Punk Records Creative Studio",
+              "url": "https://punktech.in",
+              "logo": "https://punktech.in/logo.png",
+              "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Nagpur",
+                "addressRegion": "Maharashtra",
+                "addressCountry": "IN"
+              },
+              "telephone": "+91-74477-76766",
+              "email": "Vansh.Rajak@punktech.in"
+            },
+            "areaServed": {
+              "@type": "Place",
+              "name": "Nagpur, Maharashtra, India"
+            },
+            "serviceType": "Digital Marketing",
+            "category": "Marketing Services"
+          })}
+        </script>
       </Helmet>
       
       <div className="min-h-screen bg-gradient-to-br from-blue-900 via-blue-800 to-blue-900 text-white relative pt-20">

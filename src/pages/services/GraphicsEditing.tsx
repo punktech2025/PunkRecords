@@ -59,8 +59,61 @@ const GraphicsEditing = () => {
   return (
     <>
       <Helmet>
-        <title>Graphics & Editing - Punk Records</title>
-        <meta name="description" content="Professional graphic design, photo editing, video editing, and 3D creation services." />
+        <title>Graphic Designer Nagpur | Logo Design | Branding Services | Punk Records</title>
+        <meta name="description" content="Professional graphic design company in Nagpur offering logo design, brand identity, business card design, brochure design, social media graphics, and complete branding solutions for businesses in Maharashtra." />
+        <meta name="keywords" content="graphic designer nagpur, graphic design services nagpur, logo design nagpur, branding design nagpur, creative design nagpur, visual design nagpur, logo design company nagpur, business card design nagpur, brochure design nagpur, flyer design nagpur, poster design nagpur, banner design nagpur, packaging design nagpur, label design nagpur, book cover design nagpur, magazine design nagpur, social media design nagpur, instagram post design nagpur, facebook cover design nagpur, youtube thumbnail design nagpur, website banner design nagpur, email template design nagpur, presentation design nagpur, visiting card design nagpur, letterhead design nagpur, invoice design nagpur, certificate design nagpur, id card design nagpur, menu design nagpur, catalogue design nagpur, brand identity design nagpur, corporate identity design nagpur, brand guidelines nagpur, brand strategy nagpur, rebranding services nagpur, creative agency nagpur, design studio nagpur, advertising design nagpur, marketing design nagpur, print design nagpur, digital design nagpur, web design nagpur, ui ux design nagpur, civil lines nagpur, sitabuldi nagpur, dharampeth nagpur, sadar nagpur, itwari nagpur, kamptee nagpur, hingna nagpur, katol nagpur, wardha, chandrapur, gondia, bhandara, amravati, akola, yavatmal, gadchiroli, punktech design, punk records graphics" />
+        
+        {/* Open Graph Meta Tags */}
+        <meta property="og:title" content="Graphic Designer Nagpur | Logo Design | Branding Services | Punk Records" />
+        <meta property="og:description" content="Professional graphic design company in Nagpur offering logo design, branding, and creative design solutions." />
+        <meta property="og:type" content="service" />
+        <meta property="og:url" content="https://punktech.in/services/graphics" />
+        <meta property="og:image" content="https://punktech.in/graphic-design-hero.jpg" />
+        <meta property="og:site_name" content="Punk Records Creative Studio" />
+        <meta property="og:locale" content="en_IN" />
+        
+        {/* Twitter Card Meta Tags */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="@punktechstudio" />
+        <meta name="twitter:title" content="Graphic Designer Nagpur | Logo Design | Punk Records" />
+        <meta name="twitter:description" content="Professional graphic design company in Nagpur" />
+        <meta name="twitter:image" content="https://punktech.in/graphic-design-hero.jpg" />
+        
+        {/* Additional SEO Meta Tags */}
+        <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+        <meta name="geo.region" content="IN-MH" />
+        <meta name="geo.placename" content="Nagpur" />
+        <link rel="canonical" href="https://punktech.in/services/graphics" />
+        
+        {/* Structured Data for Graphic Design Service */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Service",
+            "name": "Graphic Design & Branding Services Nagpur",
+            "description": "Professional graphic design services in Nagpur including logo design, brand identity, business cards, brochures, and digital graphics.",
+            "provider": {
+              "@type": "Organization",
+              "name": "Punk Records Creative Studio",
+              "url": "https://punktech.in",
+              "logo": "https://punktech.in/logo.png",
+              "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Nagpur",
+                "addressRegion": "Maharashtra",
+                "addressCountry": "IN"
+              },
+              "telephone": "+91-74477-76766",
+              "email": "Vansh.Rajak@punktech.in"
+            },
+            "areaServed": {
+              "@type": "Place",
+              "name": "Nagpur, Maharashtra, India"
+            },
+            "serviceType": "Graphic Design",
+            "category": "Design Services"
+          })}
+        </script>
       </Helmet>
       
       <div className="min-h-screen bg-gradient-to-br from-purple-900 via-purple-800 to-purple-900 text-white relative pt-20">

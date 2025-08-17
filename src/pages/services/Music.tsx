@@ -310,6 +310,103 @@ const Music = () => {
           </div>
         </section>
 
+        {/* Comprehensive Music Services Keywords Section */}
+        <section className="relative z-10 py-20 px-4 bg-orange-800/10">
+          <div className="max-w-7xl mx-auto">
+            <Motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              className="text-center mb-16"
+            >
+              <h2 className="text-4xl md:text-5xl font-bold mb-6 text-orange-300">
+                Complete Music Studio Services in Nagpur
+              </h2>
+              <p className="text-xl text-orange-100 max-w-3xl mx-auto mb-8">
+                Professional music recording studio serving Nagpur, Wardha, Chandrapur, Gondia, Bhandara, Amravati, Akola, Yavatmal, and Gadchiroli with state-of-the-art equipment and expert sound engineering.
+              </p>
+            </Motion.div>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+              {/* Recording Studio Services */}
+              <Motion.div
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8 }}
+                className="bg-orange-800/20 p-6 rounded-lg border border-orange-300"
+              >
+                <h3 className="text-orange-300 font-bold text-xl mb-4">Recording Studio Services</h3>
+                <ul className="text-orange-100 space-y-1 text-sm">
+                  <li>• Music Studio Nagpur - Professional Recording</li>
+                  <li>• Song Recording Nagpur - Single Track Production</li>
+                  <li>• Album Recording - Complete Album Production</li>
+                  <li>• Voice Over Recording - Professional Narration</li>
+                  <li>• Dubbing Studio Nagpur - Audio Synchronization</li>
+                  <li>• Jingle Recording - Commercial Audio Production</li>
+                  <li>• Background Music Creation - Custom Compositions</li>
+                </ul>
+              </Motion.div>
+
+              {/* Music Genre Specialization */}
+              <Motion.div
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.1 }}
+                className="bg-orange-800/20 p-6 rounded-lg border border-orange-300"
+              >
+                <h3 className="text-orange-300 font-bold text-xl mb-4">Music Genre Specialization</h3>
+                <ul className="text-orange-100 space-y-1 text-sm">
+                  <li>• Bollywood Music Recording - Film Music Production</li>
+                  <li>• Classical Music Recording - Traditional Indian Music</li>
+                  <li>• Marathi Music Recording - Regional Language Music</li>
+                  <li>• Devotional Music Recording - Spiritual Audio</li>
+                  <li>• Folk Music Recording - Traditional Folk Songs</li>
+                  <li>• Hindi Song Recording - Popular Music Production</li>
+                  <li>• Instrumental Music Recording - Pure Instrumental</li>
+                </ul>
+              </Motion.div>
+
+              {/* Audio Engineering Services */}
+              <Motion.div
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+                className="bg-orange-800/20 p-6 rounded-lg border border-orange-300"
+              >
+                <h3 className="text-orange-300 font-bold text-xl mb-4">Audio Engineering Services</h3>
+                <ul className="text-orange-100 space-y-1 text-sm">
+                  <li>• Mixing Mastering Studio - Audio Post Production</li>
+                  <li>• Sound Design Nagpur - Custom Audio Effects</li>
+                  <li>• Music Composition - Original Music Creation</li>
+                  <li>• Audio Recording - High-Quality Sound Capture</li>
+                  <li>• Sound Recording - Professional Audio Services</li>
+                  <li>• Music Producer Nagpur - Complete Music Direction</li>
+                  <li>• Sound Engineer - Technical Audio Expertise</li>
+                </ul>
+              </Motion.div>
+            </div>
+
+            {/* Location Coverage */}
+            <Motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              className="text-center bg-orange-800/20 p-8 rounded-lg border border-orange-300"
+            >
+              <h3 className="text-2xl font-bold text-orange-300 mb-4">Serving Music Artists Across Maharashtra</h3>
+              <p className="text-orange-100 mb-6">
+                Professional music recording services across Civil Lines Nagpur, Sitabuldi, Dharampeth, Sadar, Itwari, Kamptee, Hingna, Katol and surrounding cities including Wardha, Chandrapur, Gondia, Bhandara, Amravati, Akola, Yavatmal, Gadchiroli
+              </p>
+              <div className="flex flex-wrap justify-center gap-2 mb-6">
+                <span className="bg-orange-600/20 text-orange-300 px-3 py-1 rounded-full text-xs">Singer Recording Studio</span>
+                <span className="bg-orange-600/20 text-orange-300 px-3 py-1 rounded-full text-xs">Musician Recording Studio</span>
+                <span className="bg-orange-600/20 text-orange-300 px-3 py-1 rounded-full text-xs">Band Recording Studio</span>
+                <span className="bg-orange-600/20 text-orange-300 px-3 py-1 rounded-full text-xs">Artist Recording Studio</span>
+              </div>
+            </Motion.div>
+          </div>
+        </section>
+
         {/* MSME & Startup Support Section */}
         <MSMEStartupBanner variant="service-specific" service="music" />
       </div>
