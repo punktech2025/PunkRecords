@@ -1,14 +1,11 @@
-import { motion } from 'framer-motion'
+import { Motion } from '../../components/animation-provider'
 import { Helmet } from 'react-helmet-async'
+import MSMEStartupBanner from '../../components/MSMEStartupBanner'
 import { 
   CameraIcon, 
   VideoCameraIcon, 
   PhotoIcon,
-  HeartIcon,
-  SparklesIcon,
-  UserGroupIcon,
-  CalendarIcon,
-  StarIcon
+  SparklesIcon
 } from '@heroicons/react/24/outline'
 
 const PhotoVideo = () => {
@@ -66,7 +63,7 @@ const PhotoVideo = () => {
         {/* Hero Section */}
         <section className="relative z-10 py-20 px-4">
           <div className="max-w-7xl mx-auto text-center">
-            <motion.div
+            <Motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
@@ -81,15 +78,15 @@ const PhotoVideo = () => {
               <p className="text-xl md:text-2xl text-red-100 max-w-4xl mx-auto leading-relaxed">
                 Capturing moments that tell your story through stunning visuals and compelling narratives
               </p>
-            </motion.div>
+            </Motion.div>
 
-            <motion.div
+            <Motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
               className="flex flex-wrap justify-center gap-4"
             >
-              {styles.map((style, index) => (
+              {styles.map((style) => (
                 <span
                   key={style}
                   className="px-4 py-2 bg-red-600/20 border border-red-500/30 rounded-full text-red-300 text-sm font-medium"
@@ -97,14 +94,14 @@ const PhotoVideo = () => {
                   {style}
                 </span>
               ))}
-            </motion.div>
+            </Motion.div>
           </div>
         </section>
 
         {/* Service Categories */}
         <section className="relative z-10 py-20 px-4">
           <div className="max-w-7xl mx-auto">
-            <motion.div
+            <Motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
@@ -116,11 +113,11 @@ const PhotoVideo = () => {
               <p className="text-xl text-red-100 max-w-3xl mx-auto">
                 Three specialized divisions working together to capture your vision perfectly
               </p>
-            </motion.div>
+            </Motion.div>
 
             <div className="grid md:grid-cols-3 gap-8">
               {services.map((service, index) => (
-                <motion.div
+                <Motion.div
                   key={service.name}
                   initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -141,7 +138,7 @@ const PhotoVideo = () => {
                       </li>
                     ))}
                   </ul>
-                </motion.div>
+                </Motion.div>
               ))}
             </div>
           </div>
@@ -150,7 +147,7 @@ const PhotoVideo = () => {
         {/* Features Section */}
         <section className="relative z-10 py-20 px-4 bg-red-800/10">
           <div className="max-w-7xl mx-auto">
-            <motion.div
+            <Motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
@@ -162,11 +159,11 @@ const PhotoVideo = () => {
               <p className="text-xl text-red-100 max-w-3xl mx-auto">
                 We combine technical expertise with artistic vision to create visuals that inspire and engage
               </p>
-            </motion.div>
+            </Motion.div>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {features.map((feature, index) => (
-                <motion.div
+                <Motion.div
                   key={feature.title}
                   initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -182,7 +179,7 @@ const PhotoVideo = () => {
                   <p className="text-red-100 leading-relaxed">
                     {feature.description}
                   </p>
-                </motion.div>
+                </Motion.div>
               ))}
             </div>
           </div>
@@ -191,7 +188,7 @@ const PhotoVideo = () => {
         {/* Equipment Section */}
         <section className="relative z-10 py-20 px-4">
           <div className="max-w-7xl mx-auto">
-            <motion.div
+            <Motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
@@ -203,7 +200,7 @@ const PhotoVideo = () => {
               <p className="text-xl text-red-100 max-w-3xl mx-auto">
                 State-of-the-art gear to ensure your photos and videos look their absolute best
               </p>
-            </motion.div>
+            </Motion.div>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
               {[
@@ -212,7 +209,7 @@ const PhotoVideo = () => {
                 { name: "DJI RS 3 Pro", desc: "Professional gimbal" },
                 { name: "Profoto B10", desc: "Studio lighting system" }
               ].map((equipment, index) => (
-                <motion.div
+                <Motion.div
                   key={equipment.name}
                   initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -225,7 +222,7 @@ const PhotoVideo = () => {
                   <p className="text-red-200 text-sm">
                     {equipment.desc}
                   </p>
-                </motion.div>
+                </Motion.div>
               ))}
             </div>
           </div>
@@ -234,7 +231,7 @@ const PhotoVideo = () => {
         {/* CTA Section */}
         <section className="relative z-10 py-20 px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <motion.div
+            <Motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
@@ -255,9 +252,12 @@ const PhotoVideo = () => {
                   <span>View Portfolio</span>
                 </button>
               </div>
-            </motion.div>
+            </Motion.div>
           </div>
         </section>
+
+        {/* MSME & Startup Support Section */}
+        <MSMEStartupBanner variant="service-specific" service="photo-video" />
       </div>
     </>
   )

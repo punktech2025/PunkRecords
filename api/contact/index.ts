@@ -9,8 +9,8 @@ interface ResendResponse {
 const resend = new Resend(process.env.RESEND_API_KEY);
 
 // Rate limiting setup
-const RATE_LIMIT_WINDOW = 3600000; // 1 hour in milliseconds
-const MAX_REQUESTS = 5; // Maximum requests per IP per hour
+const RATE_LIMIT_WINDOW = 1800000; // 30 minutes in milliseconds
+const MAX_REQUESTS = 1; // Maximum 1 request per IP per 30 minutes
 
 // In-memory store for rate limiting (replace with Redis in production)
 const rateLimitStore = new Map<string, { count: number; timestamp: number }>();
@@ -63,12 +63,12 @@ const httpTrigger: AzureFunction = async function (context: Context, req: HttpRe
         }
 
         // Validate request body
-        const { name, email, message } = req.body;
+        const { name, email, phone, message } = req.body;
         
-        if (!name || !email || !message) {
+        if (!name || !email || !phone || !message) {
             context.res = {
                 status: 400,
-                body: { error: "Name, email, and message are required" }
+                body: { error: "Name, email, phone, and message are required" }
             };
             return;
         }
@@ -98,6 +98,8 @@ Contact Information
 Name: ${name}
 
 Email: ${email}
+
+Phone: ${phone}
 
 Message
 ${message}

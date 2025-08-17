@@ -1,5 +1,6 @@
 import { Motion } from '../../components/animation-provider'
 import { Helmet } from 'react-helmet-async'
+import MSMEStartupBanner from '../../components/MSMEStartupBanner'
 import { 
   MegaphoneIcon, 
   ChartBarIcon, 
@@ -258,6 +259,9 @@ const SocialMarketing = () => {
             </Motion.div>
           </div>
         </section>
+
+        {/* MSME & Startup Support Section */}
+        <MSMEStartupBanner variant="service-specific" service="social-marketing" />
       </div>
     </>
   )

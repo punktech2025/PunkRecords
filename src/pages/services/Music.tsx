@@ -1,14 +1,12 @@
-import { motion } from 'framer-motion'
+import { Motion } from '../../components/animation-provider'
 import { Helmet } from 'react-helmet-async'
+import MSMEStartupBanner from '../../components/MSMEStartupBanner'
 import { 
   MusicalNoteIcon, 
   MicrophoneIcon, 
   SpeakerWaveIcon,
   PlayCircleIcon,
-  ChartBarIcon,
-  UserGroupIcon,
-  CalendarIcon,
-  StarIcon
+  CalendarIcon
 } from '@heroicons/react/24/outline'
 
 const Music = () => {
@@ -66,7 +64,7 @@ const Music = () => {
         {/* Hero Section */}
         <section className="relative z-10 py-20 px-4">
           <div className="max-w-7xl mx-auto text-center">
-            <motion.div
+            <Motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
@@ -81,15 +79,15 @@ const Music = () => {
               <p className="text-xl md:text-2xl text-orange-100 max-w-4xl mx-auto leading-relaxed">
                 Where creativity meets technology to create unforgettable musical experiences
               </p>
-            </motion.div>
+            </Motion.div>
 
-            <motion.div
+            <Motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
               className="flex flex-wrap justify-center gap-4"
             >
-              {genres.map((genre, index) => (
+              {genres.map((genre) => (
                 <span
                   key={genre}
                   className="px-4 py-2 bg-orange-600/20 border border-orange-500/30 rounded-full text-orange-300 text-sm font-medium"
@@ -97,14 +95,14 @@ const Music = () => {
                   {genre}
                 </span>
               ))}
-            </motion.div>
+            </Motion.div>
           </div>
         </section>
 
         {/* Service Categories */}
         <section className="relative z-10 py-20 px-4">
           <div className="max-w-7xl mx-auto">
-            <motion.div
+            <Motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
@@ -116,11 +114,11 @@ const Music = () => {
               <p className="text-xl text-orange-100 max-w-3xl mx-auto">
                 Three specialized divisions working together to bring your musical vision to life
               </p>
-            </motion.div>
+            </Motion.div>
 
             <div className="grid md:grid-cols-3 gap-8">
               {services.map((service, index) => (
-                <motion.div
+                <Motion.div
                   key={service.name}
                   initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -141,7 +139,7 @@ const Music = () => {
                       </li>
                     ))}
                   </ul>
-                </motion.div>
+                </Motion.div>
               ))}
             </div>
           </div>
@@ -150,7 +148,7 @@ const Music = () => {
         {/* Features Section */}
         <section className="relative z-10 py-20 px-4 bg-orange-800/10">
           <div className="max-w-7xl mx-auto">
-            <motion.div
+            <Motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
@@ -162,11 +160,11 @@ const Music = () => {
               <p className="text-xl text-orange-100 max-w-3xl mx-auto">
                 We combine artistic vision with technical excellence to create music that moves people
               </p>
-            </motion.div>
+            </Motion.div>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {features.map((feature, index) => (
-                <motion.div
+                <Motion.div
                   key={feature.title}
                   initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -182,7 +180,7 @@ const Music = () => {
                   <p className="text-orange-100 leading-relaxed">
                     {feature.description}
                   </p>
-                </motion.div>
+                </Motion.div>
               ))}
             </div>
           </div>
@@ -191,7 +189,7 @@ const Music = () => {
         {/* Studio Equipment Section */}
         <section className="relative z-10 py-20 px-4">
           <div className="max-w-7xl mx-auto">
-            <motion.div
+            <Motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
@@ -203,7 +201,7 @@ const Music = () => {
               <p className="text-xl text-orange-100 max-w-3xl mx-auto">
                 State-of-the-art gear to ensure your music sounds its absolute best
               </p>
-            </motion.div>
+            </Motion.div>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
               {[
@@ -212,7 +210,7 @@ const Music = () => {
                 { name: "Universal Audio", desc: "Premium audio interfaces" },
                 { name: "Genelec Monitors", desc: "Reference-grade speakers" }
               ].map((equipment, index) => (
-                <motion.div
+                <Motion.div
                   key={equipment.name}
                   initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -225,7 +223,7 @@ const Music = () => {
                   <p className="text-orange-200 text-sm">
                     {equipment.desc}
                   </p>
-                </motion.div>
+                </Motion.div>
               ))}
             </div>
           </div>
@@ -234,7 +232,7 @@ const Music = () => {
         {/* CTA Section */}
         <section className="relative z-10 py-20 px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <motion.div
+            <Motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
@@ -255,9 +253,12 @@ const Music = () => {
                   <span>View Availability</span>
                 </button>
               </div>
-            </motion.div>
+            </Motion.div>
           </div>
         </section>
+
+        {/* MSME & Startup Support Section */}
+        <MSMEStartupBanner variant="service-specific" service="music" />
       </div>
     </>
   )
