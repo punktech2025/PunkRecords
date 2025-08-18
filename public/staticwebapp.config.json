@@ -1,0 +1,16 @@
+{
+  "navigationFallback": {
+    "rewrite": "/index.html",
+    "exclude": ["/images/*.{png,jpg,gif,ico}", "/*.{css,scss,js}", "/assets/*"]
+  },
+  "mimeTypes": {
+    ".js": "application/javascript",
+    ".mjs": "application/javascript"
+  },
+  "globalHeaders": {
+    "Cache-Control": "no-cache",
+    "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS",
+    "Access-Control-Allow-Headers": "Content-Type, x-functions-key",
+    "Access-Control-Allow-Origin": "*"
+  }
+}

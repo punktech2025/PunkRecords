@@ -1,11 +1,8 @@
 {
-  "routes": [
-    {
-      "route": "/*",
-      "serve": "/index.html",
-      "statusCode": 200
-    }
-  ],
+  "navigationFallback": {
+    "rewrite": "/index.html",
+    "exclude": ["/images/*.{png,jpg,gif,ico}", "/*.{css,scss,js}", "/assets/*"]
+  },
   "mimeTypes": {
     ".js": "application/javascript",
     ".mjs": "application/javascript"

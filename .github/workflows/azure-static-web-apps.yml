@@ -46,8 +46,7 @@ jobs:
           VITE_AZURE_FUNCTION_URL: ${{ secrets.VITE_AZURE_FUNCTION_URL }}
           VITE_AZURE_FUNCTION_KEY: ${{ secrets.VITE_AZURE_FUNCTION_KEY }}
 
-      - name: Copy staticwebapp config to dist
-        run: cp staticwebapp.config.json dist/
+
 
       - name: Debug - Check build output
         run: |

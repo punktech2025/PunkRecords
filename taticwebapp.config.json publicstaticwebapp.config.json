@@ -1,0 +1,10 @@
+[33m1eafe83[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mdev[m[33m, [m[1;31morigin/prd[m[33m, [m[1;31morigin/dev[m[33m, [m[1;31morigin/HEAD[m[33m)[m Routing file not getting copied in dist azure looks for it in dist
+[33ma54733d[m Web and Music page changes
+[33m1fa5ab7[m Continued SEO of services and pages.
+[33mf3b8692[m Advanced SEO Wedding photography and other services
+[33mf76235c[m Contact form update. and ratelimiting
+[33mc147240[m added vite azure url and secret to git up and modified .yml to pull these while building
+[33mab97a30[m possible fix 2
+[33m7c96c95[m Possible contact form email fix
+[33mb5ab8c7[m Changes in web server config
+[33m384c498[m MIME web server and config.json fix
